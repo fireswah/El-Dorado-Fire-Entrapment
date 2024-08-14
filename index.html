@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+    <!--
+        **Add description notes here
+        **idea to transition lights per location in scene
+        **idea if we had a toggle to switch between "report dozer line" and "pre-burn"
+    -->
+    <head>
+        <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+        <script src="/scripts/simple-navmesh-constraint.js"></script>
+        <script src="/scripts/vidloadcontrol.js"></script>
+        <script src="/scripts/standdisplay.js"></script>
+    </head>
+    <body>
+        <assets>
+            <!-- Images -->
+            <img id="skybox" src="/images/GoogleStreetViewFuels.jpg">
+            <img id="leather" src="/images/plate.jpg">
+            <img id="metal" src="/images/metal.jpg">
+            <img id="billboard" src="/images/billboard.png">
+            <img id="metal" src="/images/metal.jpg">
+            <img id="youarehere" src="/images/ElDMap-01.png">
+            <img id="charlie1" src="/images/CM1.png">
+            <img id="charlie2" src="/images/CM2.jpg">
+            <img id="charlie3" src="/images/CM3.png">
+            <img id="eldreport" src="/images/frontpage.png">
+            <img id="figure1" src="/images/Figure1.png">
+            <img id="figure2" src="/images/Figure2.png">
+            <img id="figure3" src="/images/Figure3.png">
+            <img id="sitreport" src="/images/IMSR20200906.png">
+            <img id="charliememory" src="/images/CharliePlaque.jpg">
+            <img id="polles" src="/images/PollesLLCReport.jpg">
+            <img id="augustcx" src="/images/AugustCxLLCReport.jpg">
+            <img id="dsphoto" src="/images/ElDoradoNightScaled_DS.png">
+            <img id="figure4" src="/images/Figure4.png">
+            <img id="figure5" src="/images/Figure5.jpg">
+            <img id="figure6" src="/images/Figure6.png">
+            <img id="baxpic" src="/images/Baxter.jpg">
+            <img id="figure8" src="/images/Figure8.png">
+            <img id="figure9" src="/images/Figure9.png">
+            <img id="figure10" src="/images/Figure10.png">
+            <img id="figure11" src="/images/Figure11.png">
+            <!-- Models -->
+            <a-asset-item id="building" src="/models/Floorplan.glb"></a-asset-item>
+            <a-asset-item id="roof" src="/models/Roof.glb"></a-asset-item>
+            <a-asset-item id="navmesh" src="/models/CollisionAug10a.glb"></a-asset-item>
+            <a-asset-item id="flag-us" src="/models/USFlag.glb"></a-asset-item>
+            <a-asset-item id="flag-ca" src="/models/CAFlag.glb"></a-asset-item>
+            <a-asset-item id="flag-usda" src="/models/USDAFlag.glb"></a-asset-item>
+            <a-asset-item id="flag-usfs" src="/models/USFSFlag.glb"></a-asset-item>
+            <a-asset-item id="flag-case" src="/models/FlagCase.glb"></a-asset-item>
+            <a-asset-item id="progmap" src="/models/Progression4Anim.glb"></a-asset-item>
+            <a-asset-item id="fbmodel" src="/models/FBv2_7_noanim.glb"></a-asset-item>
+            <!-- Audio -->
+            <audio id="audstand1" src="/audio/Stand1.mp3" preload="auto"></audio>
+            <audio id="audstand2" src="/audio/Stand2.mp3" preload="auto"></audio>
+            <audio id="audstand3" src="/audio/Stand3.mp3" preload="auto"></audio>
+            <audio id="audstand4" src="/audio/Stand4.mp3" preload="auto"></audio>
+            <audio id="audstand5" src="/audio/Stand5.mp3" preload="auto"></audio>
+            <audio id="audstand6" src="/audio/Stand6.mp3" preload="auto"></audio>
+            <audio id="audstand7" src="/audio/Stand7.mp3" preload="auto"></audio>
+            <audio id="audstand8" src="/audio/Stand8.mp3" preload="auto"></audio>
+            <audio id="audstand9" src="/audio/Stand9.mp3" preload="auto"></audio>
+            <audio id="audstand10" src="/audio/Stand10.mp3" preload="auto"></audio>
+            <audio id="audstand11" src="/audio/Stand11.mp3" preload="auto"></audio>
+            <audio id="audstand12" src="/audio/Stand12.mp3" preload="auto"></audio>
+            <audio id="audstand13" src="/audio/Stand13.mp3" preload="auto"></audio>
+            <audio id="audstand14" src="/audio/Stand14.mp3" preload="auto"></audio>
+            <audio id="audstand15" src="/audio/Stand15.mp3" preload="auto"></audio>
+            <audio id="audol1" src="/audio/ELDLRTheme1.mp3" preload="auto"></audio>
+            <audio id="audol2" src="/audio/ELDLRTheme2.mp3" preload="auto"></audio>
+            <audio id="audol3" src="/audio/ELDLRTheme3.mp3" preload="auto"></audio>
+            <audio id="audol4" src="/audio/ELDLRTheme4.mp3" preload="auto"></audio>
+            <audio id="audol5" src="/audio/ELDLRTheme5.mp3" preload="auto"></audio>
+            <audio id="audol6" src="/audio/ELDLRTheme6.mp3" preload="auto"></audio>
+            <!-- Videos -->
+            <video id="bearpeak" loop="true" src="/videos/V1BearPeakSouth1400-2000.mp4"></video>
+            <video id="forsee" loop="true" src="/videos/V2ForseeCreekRunBaxter1525.mp4"></video>
+        </assets>
+        <a-scene>
+            <!-- **Camera - note the navmesh component doesn't use a cameraRig here, may need to figure out later. -->
+            <!-- **May want screen overlay to show wasd/mouselook controls? -->
+            <!-- **Set acceleration for development here.  Probably should be around 30ish in production? -->
+            <a-camera wasd-controls="acceleration: 150" simple-navmesh-constraint="navmesh: .navmesh; fall: 0.5; height: 1.65" look-controls>
+                <a-entity cursor="rayOrigin: mouse" raycaster="objects: .button"></a-entity>
+            </a-camera>
+
+            <!-- Skybox-->
+            <a-sky src="#skybox" rotation="0 -45 0"></a-sky>
+
+            <!-- Navigation Mesh -->
+            <a-entity id="navmodel" class="navmesh" gltf-model="#navmesh" position="0 0 0" visible="false"></a-entity>
+
+            <!-- Building -->
+            <!-- **Roof needs fixing -->
+            <a-entity id="roofmodel" gltf-model="#roof" position="0 0 0"></a-entity>
+            <a-entity id="buildingmodel" gltf-model="#building" position="0 0 0"></a-entity>
+            <!-- Main Hall -->
+            <a-entity id="mainhall">
+                <a-image src="#youarehere" position="5.361 2.8 4.7" rotation="0 -90 0" height="2.134" width="2.134" scale="2 2 1">
+                    <a-ring color="red" radius-inner="0.02" radius-outer="0.04" position="0.1 -0.68 0.01"></a-ring>
+                </a-image>
+                <a-image src="#charlie1" position="-1 8.6 -36.55" rotation="0 0 0" height="0.312" width="0.435" scale="40 40 1"></a-image>
+                <a-image src="#charlie2" position="-10 4.8 -0.68" rotation="0 180 0" height="0.527" width="0.803" scale="10 10 1"></a-image>
+                <a-entity gltf-model="#flag-us" position="8.3 1.025 -35.85" scale="1 1 1" rotation="0 90 0"></a-entity>
+                <a-entity gltf-model="#flag-ca" position="11 1.025 -35.85" scale="1 1 1" rotation="0 230 0"></a-entity>
+                <a-entity gltf-model="#flag-usda" position="-10 1.025 -35.85" scale="1 1 1" rotation="0 170 0"></a-entity>
+                <a-entity gltf-model="#flag-usfs" position="-12.7 1.025 -35.85" scale="1 1 1" rotation="0 200 0"></a-entity>
+                <a-entity gltf-model="#flag-case" position="-1 1.35 -30" scale="1 1 1" rotation="0 90 90"></a-entity>
+                <a-entity id="stand1" position="0 0 -20" stand-display="basemat: #metal; platemat: #leather; billboardmat: #billboard; billboardtext: AUDIO \n 1; platetext: Introduction: 0:44; audiosrc: #audstand1"></a-entity>
+            </a-entity>
+            <!-- Introduction Hall -->
+             <!-- Need the report link image for stand 2 -->
+            <a-entity id="introductionhall">
+                <a-entity vidloadcontrol="id: 'bearpeakvid'; vidid: #bearpeak; width: 0.854; height: 0.48" position="19 3 -14.25" scale="10 10 1"></a-entity>
+                <a-entity id="stand2" position="17 0 -1.5" rotation="0 180 0" stand-display="basemat: #metal; platemat: #leather; billboardmat: #billboard; billboardtext: AUDIO \n 2; platetext: El Dorado Fire: 0:38; audiosrc: #audstand2"></a-entity>
+                <a-image src="#eldreport" position="19 3 -0.65" rotation="0 180 0" height="1.056" width="0.816" scale="4 4 1"></a-image>
+                <a-entity id="stand3" position="39 0 -13.5" rotation="0 0 0" stand-display="basemat: #metal; platemat: #leather; billboardmat: #billboard; billboardtext: AUDIO \n 3; platetext: Overview: 5:39; audiosrc: #audstand3"></a-entity>
+                <a-image src="#figure1" position="30 3.6 -14.23" rotation="0 0 0" height="0.879" width="1.147" scale="8 8 1"></a-image>
+                <a-image src="#charlie3" position="47.81 8.16 -7.284" rotation="0 -90 0" height="2.983" width="1.024" scale="5 5 1"></a-image>
+            </a-entity>
+            <!-- San Bernadino NF -->
+            <a-entity id="sbnfroom">
+                <a-entity id="stand4" position="62 0 3" rotation="0 180 0" stand-display="basemat: #metal; platemat: #leather; billboardmat: #billboard; billboardtext: AUDIO \n 4; platetext: SBNF: 1:19; audiosrc: #audstand4"></a-entity>
+                <a-image id="sbnfmap" src="#figure2" position="70 5.5 3.78" rotation="0 180 0" height="0.871" width="1.137" scale="12 12 1"></a-image>
+                <a-entity id="stand5" position="82 0 -28" rotation="0 270 0" stand-display="basemat: #metal; platemat: #leather; billboardmat: #billboard; billboardtext: AUDIO \n 5; platetext: Resource Shortages 1: 1:36; audiosrc: #audstand5"></a-entity>
+                <a-image id="plmap" src="#figure3" position="76.3 4.6 -32.67" rotation="0 0 0" height="0.623" width="0.817" scale="10 10 1"></a-image>
+                <a-entity vidloadcontrol="id: 'finneyvid'; vidid: #bearpeak; width: 0.854; height: 0.48" position="82.5 2.6 0.4" rotation="0 270 0" scale="5 5 1"></a-entity>
+                <a-entity id="stand6" position="62.5 0 -31.5" rotation="0 45 0" stand-display="basemat: #metal; platemat: #leather; billboardmat: #billboard; billboardtext: AUDIO \n 6; platetext: Resource Shortages 2: 3:58; audiosrc: #audstand6"></a-entity>
+                <a-image id="imsr" src="#sitreport" position="61.5 1.5 -25.6" rotation="0 90 0" height="1.1" width="8.5" scale="1.5 1.5 1"></a-image>
+            </a-entity>
+            <!-- Crew Room -->
+            <a-entity id="crewroom">
+                <a-image id="charlieplaque" src="#charliememory" position="52.5 4.785 -58.525" rotation="0 180 0" height="0.720" width="1.280" scale="12 12 1"></a-image>
+                <a-entity id="stand7" position="65 0 -80.5" rotation="0 0 0" stand-display="basemat: #metal; platemat: #leather; billboardmat: #billboard; billboardtext: AUDIO \n 7; platetext: Big Bear IHC: 2:21; audiosrc: #audstand7"></a-entity>
+                <!-- setup links for these -->
+                <a-image id="polleslink" src="#polles" position="61.8 3 -81.4" rotation="0 0 0" height="1.056" width="0.816" scale="4 4 1"></a-image>
+                <a-image id="augustcxlink" src="#augustcx" position="67.7 3 -81.4" rotation="0 0 0" height="1.056" width="0.816" scale="4 4 1"></a-image>
+            </a-entity>
+            <!-- Stairs -->
+            <a-entity id="atrium">    
+                <a-image src="#youarehere" position="72.8 -6 -85.25" rotation="0 -90 0" height="2.134" width="2.134" scale="2 2 1">
+                    <a-ring color="red" radius-inner="0.02" radius-outer="0.04" position="0.826 0.267 0.01"></a-ring>
+                </a-image>
+                <a-image id="mainatrium" src="#dsphoto" position="51.6 -10.7 -105.7" rotation="0 0 0" height="0.683" width="1.024" scale="20 20 1"></a-image>
+            </a-entity>
+            <!-- El Dorado Fire Room -->
+            <a-entity id="eldfireroom">
+                <a-entity id="stand8" position="71.3 -18.6 -114" rotation="0 0 0" stand-display="basemat: #metal; platemat: #leather; billboardmat: #billboard; billboardtext: AUDIO \n 8; platetext: El Dorado Fire: 2:17; audiosrc: #audstand8"></a-entity>
+                <a-image id="firehistorymap" src="#figure4" position="68 -15 -115" rotation="0 0 0" height="0.875" width="1.141" scale="6 6 1"></a-image>
+                <a-entity id="stand9" position="55 -18.6 -107" rotation="0 180 0" stand-display="basemat: #metal; platemat: #leather; billboardmat: #billboard; billboardtext: AUDIO \n 9; platetext: Initial Management: 3:34; audiosrc: #audstand9"></a-entity>
+                <a-entity id="stand10" position="64 -18.6 -119.7" rotation="0 270 0" stand-display="basemat: #metal; platemat: #leather; billboardmat: #billboard; billboardtext: AUDIO \n 10; platetext: Mill Creek: 3:34; audiosrc: #audstand10"></a-entity>
+                <a-image id="firepoochmap" src="#figure5" position="66.4 -15.2 -122.6" rotation="0 270 0" height="0.597" width="0.775" scale="6 6 1"></a-image>
+                <a-entity id="stand11" position="64 -18.6 -131.9" rotation="0 270 0" stand-display="basemat: #metal; platemat: #leather; billboardmat: #billboard; billboardtext: AUDIO \n 11; platetext: DIV O & L: 1:10; audiosrc: #audstand11"></a-entity>
+                <a-image id="angoakespic" src="#figure8" position="66.38 -16 -133.3" rotation="0 270 0" height="0.346" width="0.618" scale="6 6 1"></a-image>
+                <a-image id="angoakesmap" src="#figure9" position="66.4 -15.35 -135.4" rotation="0 270 0" height="0.879" width="1.139" scale="4 4 1"></a-image>
+                <a-entity id="stand12" position="54 -18.6 -143" rotation="0 0 0" stand-display="basemat: #metal; platemat: #leather; billboardmat: #billboard; billboardtext: AUDIO \n 12; platetext: DIV O & IMT: 7:00; audiosrc: #audstand12"></a-entity>
+                <a-image id="divprogmap" src="#figure6" position="47.385 -16.25 -145.5" rotation="0 90 0" height="0.507" width="0.675" scale="4 4 1"></a-image>
+                <a-image id="baxterphoto" src="#baxpic" position="51.5 -15.35 -147" rotation="0 0 0" height="0.490" width="0.655" scale="7 7 1"></a-image>
+                <a-entity id="stand13" position="39.5 -18.6 -131.9" rotation="0 90 0" stand-display="basemat: #metal; platemat: #leather; billboardmat: #billboard; billboardtext: AUDIO \n 13; platetext: September 17th: 7:30; audiosrc: #audstand13"></a-entity>
+                <a-image id="divomap" src="#figure10" position="36.3 -15.35 -134.5" rotation="0 90 0" height="0.459" width="0.577" scale="7 7 1"></a-image>
+                <a-entity vidloadcontrol="id: 'forseevid'; vidid: #forsee; width: 0.854; height: 0.48" position="37.3 -16.4 -130.6" rotation="0 180 0" scale="3 3 1"></a-entity>
+                <a-entity id="stand14" position="39.5 -18.6 -119.7" rotation="0 90 0" stand-display="basemat: #metal; platemat: #leather; billboardmat: #billboard; billboardtext: AUDIO \n 14; platetext: Burning Div O: 10:19; audiosrc: #audstand14"></a-entity>
+                <a-image id="burnmap" src="#figure11" position="36.3 -15.26 -122.75" rotation="0 90 0" height="0.885" width="1.143" scale="4 4 1"></a-image>
+                <a-entity id="stand15" position="35 -18.6 -113.5" rotation="0 45 0" stand-display="basemat: #metal; platemat: #leather; billboardmat: #billboard; billboardtext: AUDIO \n 15; platetext: It was good until it wasn't: 7:08; audiosrc: #audstand15"></a-entity>
+                <a-entity id="progressionmap" gltf-model="#progmap" position="51.7 -18 -125" scale="6.9 6.9 6.9" rotation="0 0 0"></a-entity>
+            </a-entity>
+            <!-- Dozer Line -->
+            <a-entity id="dozerline">
+            </a-entity>
+            <!-- Organizational Learning Room -->
+            <a-entity id="learningroom">
+                <a-entity id="theme1" position="-87.35 0 3.85" rotation="0 90 0" stand-display="basemat: #metal; platemat: #leather; billboardmat: #billboard; billboardtext: Organizational \n Learning \n 1; platetext:Theme 1: 3:08; audiosrc: #audol1"></a-entity>
+                <a-entity id="theme2" position="-82 0 17.13" rotation="0 135 0" stand-display="basemat: #metal; platemat: #leather; billboardmat: #billboard; billboardtext: Organizational \n Learning \n 2; platetext:Theme 2: 4:38; audiosrc: #audol2"></a-entity>
+                <a-entity id="theme3" position="-69 0 22" rotation="0 180 0" stand-display="basemat: #metal; platemat: #leather; billboardmat: #billboard; billboardtext: Organizational \n Learning \n 3; platetext:Theme 3: 5:13 ; audiosrc: #audol3"></a-entity>
+                <a-entity id="theme4" position="-57 0 17.7" rotation="0 225 0" stand-display="basemat: #metal; platemat: #leather; billboardmat: #billboard; billboardtext: Organizational \n Learning \n 4; platetext:Theme 4: 0:56; audiosrc: #audol4"></a-entity>
+                <a-entity id="theme5" position="-51 0 5.3" rotation="0 270 0" stand-display="basemat: #metal; platemat: #leather; billboardmat: #billboard; billboardtext: Organizational \n Learning \n 5; platetext:Theme 5: 0:16; audiosrc: #audol5"></a-entity>
+                <a-entity id="theme6" position="-68.3 0 -14" rotation="0 0 0" stand-display="basemat: #metal; platemat: #leather; billboardmat: #billboard; billboardtext: Organizational \n Learning \n 6; platetext:Theme 6: 1:30; audiosrc: #audol6"></a-entity>
+                <a-entity id="fbmap" gltf-model="#fbmodel" position="-71.7 2.09 4.9" scale="0.5 0.5 0.5" rotation="0 0 0"></a-entity>
+                <a-image src="#youarehere" position="-54.4 2.8 -14.97" rotation="0 42 0" height="2.134" width="2.134" scale="2 2 1">
+                    <a-ring color="red" radius-inner="0.02" radius-outer="0.04" position="-0.49 -0.5 0.04"></a-ring>
+                </a-image>
+            </a-entity>
+            <!-- Visitor Center -->
+            <a-entity id="visitorcenter">
+            </a-entity>
+        </a-scene>
+    </body>
+</html>
