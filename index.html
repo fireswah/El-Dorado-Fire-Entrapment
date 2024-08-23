@@ -14,7 +14,6 @@
     <body>
         <assets>
             <!-- Images -->
-            <img id="skybox" src="/images/GoogleStreetViewFuels.jpg">
             <img id="leather" src="/images/plate.jpg">
             <img id="metal" src="/images/metal.jpg">
             <img id="billboard" src="/images/billboard.png">
@@ -43,6 +42,7 @@
             <!-- Models -->
             <a-asset-item id="building" src="/models/Floorplan.glb"></a-asset-item>
             <a-asset-item id="roof" src="/models/Roof.glb"></a-asset-item>
+            <a-asset-item id="ground" src="/models/ground.glb"></a-asset-item>
             <a-asset-item id="navmesh" src="/models/CollisionAug10a.glb"></a-asset-item>
             <a-asset-item id="flag-us" src="/models/USFlag.glb"></a-asset-item>
             <a-asset-item id="flag-ca" src="/models/CAFlag.glb"></a-asset-item>
@@ -86,7 +86,7 @@
             </a-camera>
 
             <!-- Skybox-->
-            <a-sky src="#skybox" rotation="0 -45 0"></a-sky>
+            <a-sky color="blue"></a-sky>
 
             <!-- Navigation Mesh -->
             <a-entity id="navmodel" class="navmesh" gltf-model="#navmesh" position="0 0 0" visible="false"></a-entity>
@@ -95,6 +95,7 @@
             <!-- **Roof needs fixing -->
             <a-entity id="roofmodel" gltf-model="#roof" position="0 0 0"></a-entity>
             <a-entity id="buildingmodel" gltf-model="#building" position="0 0 0"></a-entity>
+            <a-entity id="terrain" gltf-model="#ground" position="0 0 0"></a-entity>
             <!-- Main Hall -->
             <a-entity id="mainhall">
                 <a-image src="#youarehere" position="5.361 2.8 4.7" rotation="0 -90 0" height="2.134" width="2.134" scale="2 2 1">
