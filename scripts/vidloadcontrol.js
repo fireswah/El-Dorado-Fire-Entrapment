@@ -1,65 +1,78 @@
 /*
 	This component:
-	Creates a video element and adds to DOM,
-	Creates an a-video element and uses the video element as src,
-	Controls (play/pause video) by clicking on the video in scene.
-		-Steps 1 and 2 should help loading large videos to the scene.
-	-uses rayorigin mouse and raycaster objects on aframe cursor (html)
-	-needs control detection for VR
+	Creates a framed video element and adds to DOM
+	Loads AFTER assets in attempt to speed up scene load times.
+	!!! Need to still work on dimensions better for each size in scene. 
 */
-AFRAME.registerComponent('vidloadcontrol', {
+AFRAME.registerComponent( 'vidloadcontrol', {
 	schema: {
-		id: {type: 'string', default: ''},
-		vidid: {type: 'string', default: ''},
-		src: {type: 'string', default: ''},
-		width: {type: 'number', default: 3 },
-		height: {type: 'number', default: 1.5 }
+		vidid: { type: 'string', default: '' },
+		vidsrc: { type: 'string', default: ''},
+		vwidth: { type: 'number', default: 3 },
+		vheight: { type: 'number', default: 1.5 },
+		vscale: { type: 'number', default: 1.0 },
+		style: { type: 'string', default: 'wall' }
 	},
 
 	init: function () {
 		var data = this.data;
 		var el = this.el;
     	var scene = el.sceneEl;
-		var vidsource = document.getElementById( data.vidid );
-/*
-//video settings - not sure what I did so long ago here, but makes sense to do the settings here, but need to append to a-video instead?
-//I may have been trying to load them separately from assets originally to reduce scene load.  Consider using three.js to load the assets instead?
-		var video = document.createElement('video');
-		video.setAttribute( 'id', data.vidid );
-		video.setAttribute('src', data.src )
-		video.setAttribute( 'autoplay', false );
-		video.setAttribute( 'loop', false );
-		document.body.appendChild(video);
-*/
-		var avideo = document.createElement('a-video');
-		var selector = ( data.vidid );
-		avideo.setAttribute( 'id', data.id );
-		avideo.setAttribute( 'material', 'src', selector );
-		avideo.setAttribute( 'width', data.width );
-		avideo.setAttribute( 'height', data.height );
-		avideo.setAttribute( 'class', 'button' );
 
-		avideo.addEventListener( 'loaded', function () {
-			document.getElementById( data.id ).load();
-		});
-
-		el.appendChild( avideo );
-
-		var isplaying = false;
-		var vidtexture = document.querySelector( selector );
-
-		avideo.addEventListener('click', function (evt) {
-			if (isplaying === false) {
-				vidtexture.play();
-				isplaying = true;
-			}else if (isplaying === true) {
-				vidtexture.pause();
-				isplaying = false;
+		//Only begin loading the component and video after the scene has finished loading.
+		scene.addEventListener( 'loaded', function() {
+			//console.log( 'Scene Loaded' );
+		
+			//Add object for style of frame, wall or rock or stand in future?
+			if( data.style == 'wall' ) {
+				var base = document.createElement( 'a-box' );
+				base.setAttribute( 'width', data.vwidth + 0.05 );
+				base.setAttribute( 'height', data.vheight + 0.05 );
+				base.setAttribute( 'depth', 0.05 );
+				base.setAttribute( 'color', 'gray' );
+				base.setAttribute( 'scale', { x: data.vscale, y: data.vscale, z: 1.0 } );
 			}
-		});
 
-		avideo.addEventListener('ended', function (evt) {
-			isplaying = false;
+			//console.log( 'adding vid' );
+			
+			//Add a-video element and set video source
+			var avideo = document.createElement('a-video');
+			avideo.setAttribute( 'id', data.vidid );
+			avideo.setAttribute( 'material', 'src', data.vidsrc );
+			avideo.setAttribute( 'width', data.vwidth );
+			avideo.setAttribute( 'height', data.vheight );
+			avideo.setAttribute( 'position', '0 0 0.03' );
+			avideo.setAttribute( 'scale', { x: data.vscale, y: data.vscale, z: 1.0 } );
+			avideo.setAttribute( 'class', 'button' );
+
+			//Attach everything to element/DOM
+			el.appendChild( base );
+			el.appendChild( avideo );
+
+			var isplaying = false;
+		
+			//Once video loads, add button functionality
+			//Sequence was important here I think.
+			avideo.addEventListener( 'loaded', function () {
+				//console.log( 'vid loaded' );
+				//console.log( 'loading play button' );
+				avideo.addEventListener( 'click', function () {
+					//var vidEl = document.querySelector( '#newvid' );
+					//console.log( vidEl );
+					var vidobject = document.querySelector( '#' + data.vidid );
+					//console.log( vidobject );
+					var vidtexture = vidobject.getObject3D( 'mesh' ).material.map.image;
+					//console.log( vidtexture );
+					if (isplaying === false) {
+						vidtexture.play();
+						isplaying = true;
+					}else if (isplaying === true) {
+						vidtexture.pause();
+						isplaying = false;
+					}
+				});
+			});
+
 		});
 
 	},
