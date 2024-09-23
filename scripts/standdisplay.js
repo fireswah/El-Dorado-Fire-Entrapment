@@ -58,17 +58,32 @@ AFRAME.registerComponent('stand-display', {
         button.setAttribute( 'rotation', '90 0 0' );
         button.setAttribute( 'scale', '0.075 0.075 0.075' );
         button.setAttribute( 'material', 'color', 'red' );
-        button.setAttribute( 'sound', {
-            src: data.audiosrc,
-            on: 'click',
-            rolloffFactor: 1,
-            maxDistance: 20,
-            distanceModel: 'linear'
-        });
         
         el.appendChild( plate );
         plate.appendChild( plttext );
         plate.appendChild( button );
+
+        button.addEventListener( 'click', function () {
+            if( button.getAttribute( 'sound' ) ) {
+                //don't reload over again.
+                console.log('nothing');
+            }else {
+                button.setAttribute( 'sound', {
+                    src: data.audiosrc,
+                    on: 'click',
+                    rolloffFactor: 1,
+                    maxDistance: 20,
+                    distanceModel: 'linear'
+                });
+                console.log( 'loading sound' );
+            }
+            
+        });
+        
+        button.addEventListener( 'sound-loaded', function () {
+			//document.getElementById( data.id ).load();
+            button.setAttribute( 'material', 'color', 'green' );
+		});
 
         //Create billboard and billboard text
         var billboard = document.createElement( 'a-plane' );
@@ -95,6 +110,8 @@ AFRAME.registerComponent('stand-display', {
         
         el.appendChild( billboard );
         billboard.appendChild( bbtext );
+
+
 	},
 
 	update: function () {},
