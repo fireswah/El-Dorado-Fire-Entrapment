@@ -10,6 +10,7 @@
         <script src="/scripts/simple-navmesh-constraint.js"></script>
         <script src="/scripts/vidloadcontrol.js"></script>
         <script src="/scripts/standdisplay.js"></script>
+        <script src="/scripts/add-quote.js"></script>"
     </head>
     <body>
         <assets>
@@ -84,6 +85,7 @@
                 <a-entity gltf-model="#flag-usfs" position="-12.7 1.025 -35.85" scale="1 1 1" rotation="0 200 0"></a-entity>
                 <a-entity gltf-model="#flag-case" position="-1 1.35 -30" scale="1 1 1" rotation="0 90 90"></a-entity>
                 <a-entity id="stand1" position="0 0 -20" stand-display="basemat: #metal; platemat: #leather; billboardmat: #billboard; billboardtext: AUDIO \n 1; platetext: Introduction: 0:44; audiosrc: /audio/Stand1.mp3"></a-entity>
+                <a-entity id="quote1" position="3 3 -20" add-quote="quotetext: 'That was Charlie.  He was an OG.  Always a hardline firefighter.  Goin' hard and doin' it right.'\n-Big Bear IHC Crewmember"></a-entity>
             </a-entity>
             <!-- Introduction Hall -->
              <!-- Need the report link image for stand 2 -->
@@ -105,9 +107,11 @@
                 <!-- <a-entity vidloadcontrol="id: 'finneyvid'; vidid: #bearpeak; width: 0.854; height: 0.48" position="82.5 2.6 0.4" rotation="0 270 0" scale="5 5 1"></a-entity> -->
                 <a-entity id="stand6" position="62.5 0 -31.5" rotation="0 45 0" stand-display="basemat: #metal; platemat: #leather; billboardmat: #billboard; billboardtext: AUDIO \n 6; platetext: Resource Shortages 2: 3:58; audiosrc: /audio/Stand6.mp3"></a-entity>
                 <a-image id="imsr" src="#sitreport" position="61.5 1.5 -25.6" rotation="0 90 0" height="1.1" width="8.5" scale="1.5 1.5 1"></a-image>
+                <a-entity id="quote2" position="65.5 3 -25.6" add-quote="quotetext: 'We know how to suppress fires, but we don’t know how to use fire in the off seasons to manage our fuels to make it safer for firefighters in the summer. We are much more comfortable spending money on suppression than on up front fuels management.'\n-Local Fire Leader"></a-entity>
             </a-entity>
             <!-- Crew Room -->
             <a-entity id="crewroom">
+                <a-entity id="quote3" position="65.5 3 -30" add-quote="quotetext: 'Death has been circling us all year.'\n-Big Bear IHC Crewmember"></a-entity>
                 <a-image id="charlieplaque" src="#charliememory" position="52.5 4.785 -58.525" rotation="0 180 0" height="0.720" width="1.280" scale="12 12 1"></a-image>
                 <a-entity id="stand7" position="65 0 -80.5" rotation="0 0 0" stand-display="basemat: #metal; platemat: #leather; billboardmat: #billboard; billboardtext: AUDIO \n 7; platetext: Big Bear IHC: 2:21; audiosrc: /audio/Stand7.mp3"></a-entity>
                 <a-image class="button" id="polleslink" src="#polles" position="61.8 3 -81.4" rotation="0 0 0" height="1.056" width="0.816" scale="4 4 1" link="href: https://lessons.fs2c.usda.gov/incident/polles-fire-helicopter-accident-and-fatality-2020"></a-image>
@@ -126,6 +130,8 @@
                 <a-image id="firehistorymap" src="#figure4" position="68 -15 -115" rotation="0 0 0" height="0.875" width="1.141" scale="6 6 1"></a-image>
                 <a-entity id="stand9" position="55 -18.6 -107" rotation="0 180 0" stand-display="basemat: #metal; platemat: #leather; billboardmat: #billboard; billboardtext: AUDIO \n 9; platetext: Initial Management: 3:34; audiosrc: /audio/Stand9.mp3"></a-entity>
                 <a-entity id="stand10" position="64 -18.6 -119.7" rotation="0 270 0" stand-display="basemat: #metal; platemat: #leather; billboardmat: #billboard; billboardtext: AUDIO \n 10; platetext: Mill Creek: 3:34; audiosrc: /audio/Stand10.mp3"></a-entity>
+                <a-entity id="quote4" position="64 -18.6 -120" add-quote="quotetext: 'It felt like every day was initial attack.'\n-CAL FIRE Crew Captain"></a-entity>
+                <a-entity id="quote5" position="64 -18.6 -123" add-quote="quotetext: 'When an individual feels an assignment is unsafe, they also have the obligation to identify, to the degree possible, safe alternatives for completing that assignment.  Turning down an assignment is one possible outcome of managing risk.'\n-IRPG"></a-entity>
                 <a-image id="firepoochmap" src="#figure5" position="66.4 -15.2 -122.6" rotation="0 270 0" height="0.597" width="0.775" scale="6 6 1"></a-image>
                 <a-entity id="stand11" position="64 -18.6 -131.9" rotation="0 270 0" stand-display="basemat: #metal; platemat: #leather; billboardmat: #billboard; billboardtext: AUDIO \n 11; platetext: DIV O & L: 1:10; audiosrc: /audio/Stand11.mp3"></a-entity>
                 <a-image id="angoakespic" src="#figure8" position="66.38 -16 -133.3" rotation="0 270 0" height="0.346" width="0.618" scale="6 6 1"></a-image>
@@ -143,11 +149,19 @@
             </a-entity>
             <!-- Dozer Line -->
             <a-entity id="dozerline">
+                <a-entity id="quote6" position="25.837 -16 -108" add-quote="quotetext: 'It was good until it wasn't.'\n'Wind shift, wind shift, wind shift.  Everyone starts looking for spots, we're gonna get spots!'\n'We've got ember wash on the corner!'\n-Division O Holding Resources"></a-entity>
                 <a-entity id="stand15" position="25.837 -18.794 -105.75" rotation="0 90 0" stand-display="basemat: #metal; platemat: #leather; billboardmat: #billboard; billboardtext: AUDIO \n 15; platetext: It was good until it wasn't: 7:08; audiosrc: /audio/Stand15.mp3"></a-entity>
+                <a-entity id="quote7" position="20 -16 -108" add-quote="quotetext: 'We saw an engine captain chasing spots on the end of a lateral.  We tried to get his attention and he couldn't hear us.  We had to pull on the hose to get his attention and once we did, he beat us down the hill even after he fell.  I just remembered that's how Core Iverson died and didn't want to let that happen again.'\n-CAL FIRE Engine Crewmember"></a-entity>
+                <a-entity id="quote8" position="20 -14 -108" add-quote="quotetext: 'Orange jumpsuits came out of the woods like ants.'\n-CAL FIRE Engine Captain"></a-entity>
                 <a-entity id="stand16" position="-24.034 -6.295 -88.507" rotation="0 135 0" stand-display="basemat: #metal; platemat: #leather; billboardmat: #billboard; billboardtext: AUDIO \n 16; platetext: Missing Firefighter 1: 2:29; audiosrc: /audio/Stand16.mp3"></a-entity>
+                <a-entity id="quote9" position="-23 -3 -90" add-quote="quotetext: 'It was weird.  It felt like, 'Firefight, firefight, missing person...Firefight, firefight, missing person.''\n-CAL FIRE Captain"></a-entity>
+                <a-entity id="quote10" position="-27 -3 -90" add-quote="quotetext: 'The whole time I was just waiting for Charlie to pop out of the woods with his radio bumped off going, 'Woah!  That was crazy!''\n-Big Bear SUPT 1"></a-entity>
                 <a-entity id="stand17" position="-106.12 10.840 -88.507" rotation="0 0 0" stand-display="basemat: #metal; platemat: #leather; billboardmat: #billboard; billboardtext: AUDIO \n 17; platetext: Missing Firefighter 2: 8:43; audiosrc: /audio/Stand17.mp3"></a-entity>
+                <a-entity id="quote11" position="-106.12 15 -90" add-quote="quotetext: 'It was bizarre to me that there was no standard way to convey an IWI for a missing firefighter' [In comparison to a structure fire Personnel Accountability Report (PAR) ]\n-MEDL(T), Structure Firefighter of 30+ years"></a-entity>
                 <a-entity id="stand18" position="-153 24.653 -80.307" rotation="0 75 0" stand-display="basemat: #metal; platemat: #leather; billboardmat: #billboard; billboardtext: AUDIO \n 18; platetext: Firefighter Found 1: 4:26; audiosrc: /audio/Stand18.mp3"></a-entity>
+                <a-entity id="quote12" position="-153 27 -83" add-quote="quotetext: 'I don't smoke, but I needed a cigarette'\n-Big Bear, SUPT 1"></a-entity>
                 <a-entity id="stand19" position="-105.61 15.098 -45.412" rotation="0 330 0" stand-display="basemat: #metal; platemat: #leather; billboardmat: #billboard; billboardtext: AUDIO \n 19; platetext: Firefighter Found 2: 1:57; audiosrc: /audio/Stand19.mp3"></a-entity>
+                <a-entity id="quote13" position="-105.61 17 -43" add-quote="quotetext: 'Charlie's emergency notification form said that he wanted [The President of the United States] to deliver the news.  Only Charlie...'\n-Mountain Top District Ranger"></a-entity>
                 <a-entity id="vgates" vidloadcontrol="vidid: vidgatesofhell; vidsrc: /videos/V3GatesOfHell1923.mp4; vwidth: 0.854; vheight: 0.48; vscale: 3" position="26.837 -18.794 -105.75" rotation="0 0 0"></a-entity>
                 <a-entity id="vegress" vidloadcontrol="vidid: videgress; vidsrc: /videos/V4EgressDownLineCalFire1931.mp4; vwidth: 0.854; vheight: 0.48; vscale: 3" position="27.837 -18.794 -105.75" rotation="0 0 0"></a-entity>
                 <a-entity id="vshortdrive" vidloadcontrol="vidid: vidshortdrive; vidsrc: /videos/V5ShortDrive2005.mp4; vwidth: 0.854; vheight: 0.48; vscale: 3" position="28.837 -18.794 -105.75" rotation="0 0 0"></a-entity>
