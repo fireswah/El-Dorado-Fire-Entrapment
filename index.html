@@ -69,56 +69,56 @@
             <a-entity id="trees" gltf-model="#glbtrees" material="depthTest: true; side: front; transparent: true" position="0 0 0"></a-entity>
             <!-- ITEMS BY ROOM -->
             <!-- Main Hall -->
-            <a-entity id="mainhall">
-                <a-ring color="red" radius-inner="0.02" radius-outer="0.04" position="0.1 -0.68 0.01"></a-ring>
+            <a-entity id="mainhallassets">
+                <a-ring id="yah1" color="red" radius-inner="0.02" radius-outer="0.04" position="5.347 1.512 4.929" rotation="0 -90 0" material="emissive: red"></a-ring>
                 <a-entity id="stand1" position="0 0 -20" stand-display="billboardtext: AUDIO \n 1; platetext: Introduction: 0:44; audiosrc: /audio/Stand1.mp3"></a-entity>
-                <a-entity id="quote1" position="3 3 -20" add-quote="quotetext: 'That was Charlie.  He was an OG.  Always a hardline firefighter.  Goin' hard and doin' it right.'\n-Big Bear IHC Crewmember"></a-entity>
+                <a-entity id="quote1" position="12.3 3 -13.9" rotation="0 -90 0" add-quote="quotetext: 'That was Charlie.  He was an OG.  Always a hardline firefighter.  Goin' hard and doin' it right.'\n-Big Bear IHC Crewmember"></a-entity>
             </a-entity>
             <!-- Introduction Hall -->
              <!-- Need the report link image for stand 2 -->
-            <a-entity id="introductionhall">
-                <a-entity id="vbearpeak" vidloadcontrol="vidid: vidbearpeak; vidsrc: /videos/V1BearPeakSouth1400-2000.mp4; vwidth: 0.854; vheight: 0.48; vscale: 10" position="19 3 -14.25"></a-entity>
+            <a-entity id="introductionhallassets">
+                <a-entity id="vbearpeak" vidloadcontrol="vidid: vidbearpeak; vidsrc: /videos/V1BearPeakSouth1400-2000.mp4; vwidth: 0.854; vheight: 0.48; vscale: 10" position="19 3 -13.2"></a-entity>
                 <!-- <a-entity vidloadcontrol="id: 'bearpeakvid'; vidid: #bearpeak; vwidth: 0.854; vheight: 0.48" position="19 3 -14.25" scale="10 10 1"></a-entity> -->
                 <a-entity id="stand2" position="17 0 -1.5" rotation="0 180 0" stand-display="billboardtext: AUDIO \n 2; platetext: El Dorado Fire: 0:38; audiosrc: /audio/Stand2.mp3"></a-entity>
                 <a-image class="button" src="#eldreport" position="19 3 -0.65" rotation="0 180 0" height="1.056" width="0.816" scale="4 4 1" link="href: https://lessons.fs2c.usda.gov/incident/el-dorado-fire-fatality-2020"></a-image>
-                <a-entity id="stand3" position="39 0 -13.5" rotation="0 0 0" stand-display="billboardtext: AUDIO \n 3; platetext: Overview: 5:39; audiosrc: /audio/Stand3.mp3"></a-entity>
+                <a-entity id="stand3" position="39 0 -12.75" rotation="0 0 0" stand-display="billboardtext: AUDIO \n 3; platetext: Overview: 5:39; audiosrc: /audio/Stand3.mp3"></a-entity>
             </a-entity>
             <!-- San Bernadino NF -->
-            <a-entity id="sbnfroom">
+            <a-entity id="sbnfroomassets">
                 <a-entity id="stand4" position="62 0 3" rotation="0 180 0" stand-display="billboardtext: AUDIO \n 4; platetext: SBNF: 1:19; audiosrc: /audio/Stand4.mp3"></a-entity>
-                <a-entity id="stand5" position="82 0 -28" rotation="0 270 0" stand-display="billboardtext: AUDIO \n 5; platetext: Resource Shortages 1: 1:36; audiosrc: /audio/Stand5.mp3"></a-entity>
+                <a-entity id="stand5" position="82 0 -29.4" rotation="0 270 0" stand-display="billboardtext: AUDIO \n 5; platetext: Resource Shortages 1: 1:36; audiosrc: /audio/Stand5.mp3"></a-entity>
                 <!-- <a-entity vidloadcontrol="id: 'finneyvid'; vidid: #bearpeak; width: 0.854; height: 0.48" position="82.5 2.6 0.4" rotation="0 270 0" scale="5 5 1"></a-entity> -->
-                <a-entity id="stand6" position="62.5 0 -31.5" rotation="0 45 0" stand-display="billboardtext: AUDIO \n 6; platetext: Resource Shortages 2: 3:58; audiosrc: /audio/Stand6.mp3"></a-entity>
-                <a-entity id="quote2" position="65.5 3 -25.6" add-quote="quotetext: 'We know how to suppress fires, but we don’t know how to use fire in the off seasons to manage our fuels to make it safer for firefighters in the summer. We are much more comfortable spending money on suppression than on up front fuels management.'\n-Local Fire Leader"></a-entity>
+                <a-entity id="stand6" position="62.5 0 -29.4" rotation="0 90 0" stand-display="billboardtext: AUDIO \n 6; platetext: Resource Shortages 2: 3:58; audiosrc: /audio/Stand6.mp3"></a-entity>
+                <a-entity id="quote2" position="82.4 8.6 -13.7" rotation="0 -90 0" add-quote="quotetext: 'We know how to suppress fires, but we don’t know how to use fire in the off seasons to manage our fuels to make it safer for firefighters in the summer. We are much more comfortable spending money on suppression than on up front fuels management.'\n-Local Fire Leader"></a-entity>
             </a-entity>
             <!-- Crew Room -->
-            <a-entity id="crewroom">
-                <a-entity id="quote3" position="65.5 3 -30" add-quote="quotetext: 'Death has been circling us all year.'\n-Big Bear IHC Crewmember"></a-entity>
+            <a-entity id="crewroomassets">
+                <a-entity id="quote3" position="72.45 2.3 -46.5" rotation="0 -90 0" add-quote="quotetext: 'Death has been circling us all year.'\n-Big Bear IHC Crewmember"></a-entity>
                 <a-entity id="stand7" position="65 0 -80.5" rotation="0 0 0" stand-display="billboardtext: AUDIO \n 7; platetext: Big Bear IHC: 2:21; audiosrc: /audio/Stand7.mp3"></a-entity>
                 <a-image class="button" id="polleslink" src="#polles" position="61.8 3 -81.4" rotation="0 0 0" height="1.056" width="0.816" scale="4 4 1" link="href: https://lessons.fs2c.usda.gov/incident/polles-fire-helicopter-accident-and-fatality-2020"></a-image>
                 <a-image class="button" id="augustcxlink" src="#augustcx" position="67.7 3 -81.4" rotation="0 0 0" height="1.056" width="0.816" scale="4 4 1" link="href: https://lessons.fs2c.usda.gov/incident/august-complex-tatham-fire-fatality-2020"></a-image>
             </a-entity>
             <!-- Stairs -->
-            <a-entity id="atrium">    
-                <a-ring color="red" radius-inner="0.02" radius-outer="0.04" position="0.826 0.267 0.01"></a-ring>
+            <a-entity id="atriumassets">    
+                <a-ring id="yah2" color="red" radius-inner="0.02" radius-outer="0.04" position="72.445 -5.682 -83.45" rotation="0 -90 0" material="emissive: red"></a-ring>
             </a-entity>
             <!-- El Dorado Fire Room -->
-            <a-entity id="eldfireroom">
+            <a-entity id="eldfireroomassets">
                 <a-entity id="stand8" position="71.3 -18.6 -114" rotation="0 0 0" stand-display="billboardtext: AUDIO \n 8; platetext: El Dorado Fire: 2:17; audiosrc: /audio/Stand8.mp3"></a-entity>
-                <a-entity id="stand9" position="55 -18.6 -107" rotation="0 180 0" stand-display="billboardtext: AUDIO \n 9; platetext: Initial Management: 3:34; audiosrc: /audio/Stand9.mp3"></a-entity>
-                <a-entity id="stand10" position="64 -18.6 -119.7" rotation="0 270 0" stand-display="billboardtext: AUDIO \n 10; platetext: Mill Creek: 3:34; audiosrc: /audio/Stand10.mp3"></a-entity>
-                <a-entity id="quote4" position="64 -18.6 -120" add-quote="quotetext: 'It felt like every day was initial attack.'\n-CAL FIRE Crew Captain"></a-entity>
-                <a-entity id="quote5" position="64 -18.6 -123" add-quote="quotetext: 'When an individual feels an assignment is unsafe, they also have the obligation to identify, to the degree possible, safe alternatives for completing that assignment.  Turning down an assignment is one possible outcome of managing risk.'\n-IRPG"></a-entity>
-                <a-entity id="stand11" position="64 -18.6 -131.9" rotation="0 270 0" stand-display="billboardtext: AUDIO \n 11; platetext: DIV O & L: 1:10; audiosrc: /audio/Stand11.mp3"></a-entity>
-                <a-entity id="stand12" position="54 -18.6 -143" rotation="0 0 0" stand-display="billboardtext: AUDIO \n 12; platetext: DIV O & IMT: 7:00; audiosrc: /audio/Stand12.mp3"></a-entity>
-                <a-entity id="stand13" position="39.5 -18.6 -131.9" rotation="0 90 0" stand-display="billboardtext: AUDIO \n 13; platetext: September 17th: 7:30; audiosrc: /audio/Stand13.mp3"></a-entity>
+                <a-entity id="stand9" position="52 -18.6 -107" rotation="0 180 0" stand-display="billboardtext: AUDIO \n 9; platetext: Initial Management: 3:34; audiosrc: /audio/Stand9.mp3"></a-entity>
+                <a-entity id="stand10" position="64 -18.6 -117.75" rotation="0 270 0" stand-display="billboardtext: AUDIO \n 10; platetext: Mill Creek: 3:34; audiosrc: /audio/Stand10.mp3"></a-entity>
+                <a-entity id="quote4" position="58.48 -16.15 -105.9" rotation="0 180 0" add-quote="quotetext: 'It felt like every day was initial attack.'\n-CAL FIRE Crew Captain"></a-entity>
+                <a-entity id="quote5" position="59.5 -16 -142.8" add-quote="quotetext: 'When an individual feels an assignment is unsafe, they also have the obligation to identify, to the degree possible, safe alternatives for completing that assignment.  Turning down an assignment is one possible outcome of managing risk.'\n-IRPG"></a-entity>
+                <a-entity id="stand11" position="64 -18.6 -130.6" rotation="0 270 0" stand-display="billboardtext: AUDIO \n 11; platetext: DIV O & L: 1:10; audiosrc: /audio/Stand11.mp3"></a-entity>
+                <a-entity id="stand12" position="51.8 -18.6 -145" rotation="0 0 0" stand-display="billboardtext: AUDIO \n 12; platetext: DIV O & IMT: 7:00; audiosrc: /audio/Stand12.mp3"></a-entity>
+                <a-entity id="stand13" position="39.5 -18.6 -130.6" rotation="0 90 0" stand-display="billboardtext: AUDIO \n 13; platetext: September 17th: 7:30; audiosrc: /audio/Stand13.mp3"></a-entity>
                 <!-- <a-entity vidloadcontrol="id: 'forseevid'; vidid: #forsee; width: 0.854; height: 0.48" position="37.3 -16.4 -130.6" rotation="0 180 0" scale="3 3 1"></a-entity> -->
-                <a-entity id="vforesee" vidloadcontrol="vidid: vidforsee; vidsrc: /videos/V2ForseeCreekRunBaxter1525.mp4; vwidth: 0.854; vheight: 0.48; vscale: 3" position="37.3 -16.4 -130.6" rotation="0 180 0"></a-entity>
-                <a-entity id="stand14" position="39.5 -18.6 -119.7" rotation="0 90 0" stand-display="billboardtext: AUDIO \n 14; platetext: Burning Div O: 10:19; audiosrc: /audio/Stand14.mp3"></a-entity>
-                <a-entity id="progressionmap" gltf-model="#progmap" position="51.7 -18 -125" scale="6.9 6.9 6.9" rotation="0 0 0"></a-entity>
+                <a-entity id="vforesee" vidloadcontrol="vidid: vidforsee; vidsrc: /videos/V2ForseeCreekRunBaxter1525.mp4; vwidth: 0.854; vheight: 0.48; vscale: 3" position="38.86 -16.4 -138.03" rotation="0 0 0"></a-entity>
+                <a-entity id="stand14" position="39.5 -18.6 -117.75" rotation="0 90 0" stand-display="billboardtext: AUDIO \n 14; platetext: Burning Div O: 10:19; audiosrc: /audio/Stand14.mp3"></a-entity>
+                <a-entity id="progressionmap" gltf-model="#progmap" position="52.022 -18 -127.15" scale="6.9 6.9 6.9" rotation="0 0 0"></a-entity>
             </a-entity>
             <!-- Dozer Line -->
-            <a-entity id="dozerline">
+            <a-entity id="dozerlineassets">
                 <a-entity id="quote6" position="25.837 -16 -108" add-quote="quotetext: 'It was good until it wasn't.'\n'Wind shift, wind shift, wind shift.  Everyone starts looking for spots, we're gonna get spots!'\n'We've got ember wash on the corner!'\n-Division O Holding Resources"></a-entity>
                 <a-entity id="stand15" position="25.837 -18.794 -105.75" rotation="0 90 0" stand-display="billboardtext: AUDIO \n 15; platetext: It was good until it wasn't: 7:08; audiosrc: /audio/Stand15.mp3"></a-entity>
                 <a-entity id="quote7" position="20 -16 -108" add-quote="quotetext: 'We saw an engine captain chasing spots on the end of a lateral.  We tried to get his attention and he couldn't hear us.  We had to pull on the hose to get his attention and once we did, he beat us down the hill even after he fell.  I just remembered that's how Cory Iverson died and didn't want to let that happen again.'\n-CAL FIRE Engine Crewmember"></a-entity>
@@ -140,18 +140,18 @@
                 <a-entity id="vdrone2" vidloadcontrol="vidid: viddronetherm; vidsrc: /videos/V8DroneWithThermal2327.mp4; vwidth: 0.854; vheight: 0.48; vscale: 3" position="31.837 -18.794 -105.75" rotation="0 0 0"></a-entity>
                 <a-entity id="vlongdrive" vidloadcontrol="vidid: vidlongdrive; vidsrc: /videos/V9LongDrive2007.mp4; vwidth: 0.854; vheight: 0.48; vscale: 3" position="32.837 -18.794 -105.75" rotation="0 0 0"></a-entity>
             </a-entity>
-            <!-- Organizational Learning Room -->
-            <a-entity id="learningroom">
-                <a-entity id="theme1" position="-87.35 0 3.85" rotation="0 90 0" stand-display="billboardtext: Organizational \n Learning \n 1; platetext:Theme 1: 3:08; audiosrc: /audio/ELDLRTheme1.mp3"></a-entity>
-                <a-entity id="theme2" position="-82 0 17.13" rotation="0 135 0" stand-display="billboardtext: Organizational \n Learning \n 2; platetext:Theme 2: 4:38; audiosrc: /audio/ELDLRTheme2.mp3"></a-entity>
-                <a-entity id="theme3" position="-69 0 22" rotation="0 180 0" stand-display="billboardtext: Organizational \n Learning \n 3; platetext:Theme 3: 5:13 ; audiosrc: /audio/ELDLRTheme3.mp3"></a-entity>
-                <a-entity id="theme4" position="-57 0 17.7" rotation="0 225 0" stand-display="billboardtext: Organizational \n Learning \n 4; platetext:Theme 4: 0:56; audiosrc: /audio/ELDLRTheme4.mp3"></a-entity>
-                <a-entity id="theme5" position="-51 0 5.3" rotation="0 270 0" stand-display="billboardtext: Organizational \n Learning \n 5; platetext:Theme 5: 0:16; audiosrc: /audio/ELDLRTheme5.mp3"></a-entity>
-                <a-entity id="theme6" position="-68.3 0 -14" rotation="0 0 0" stand-display="billboardtext: Organizational \n Learning \n 6; platetext:Theme 6: 1:30; audiosrc: /audio/ELDLRTheme6.mp3"></a-entity>
-                <a-entity id="fbmap" gltf-model="#fbmodel" position="-71.7 2.09 4.9" scale="0.5 0.5 0.5" rotation="0 0 0"></a-entity>
+            <!-- Organizational Learning Room 4.85-->
+            <a-entity id="learningroomassets">
+                <a-entity id="theme1" position="-82 14.936 -4.73" rotation="0 225 0" stand-display="billboardtext: Organizational \n Learning \n 1; platetext:Theme 1: 3:08; audiosrc: /audio/ELDLRTheme1.mp3"></a-entity>
+                <a-entity id="theme2" position="-68.675 12.26 -8.65" rotation="0 170 0" stand-display="billboardtext: Organizational \n Learning \n 2; platetext:Theme 2: 4:38; audiosrc: /audio/ELDLRTheme2.mp3"></a-entity>
+                <a-entity id="theme3" position="-58.6 9.828 0.844" rotation="0 110 0" stand-display="billboardtext: Organizational \n Learning \n 3; platetext:Theme 3: 5:13 ; audiosrc: /audio/ELDLRTheme3.mp3"></a-entity>
+                <a-entity id="theme4" position="-61.96 7.28 14.87" rotation="0 45 0" stand-display="billboardtext: Organizational \n Learning \n 4; platetext:Theme 4: 0:56; audiosrc: /audio/ELDLRTheme4.mp3"></a-entity>
+                <a-entity id="theme5" position="-75.28 4.72 18.59" rotation="0 345 0" stand-display="billboardtext: Organizational \n Learning \n 5; platetext:Theme 5: 0:16; audiosrc: /audio/ELDLRTheme5.mp3"></a-entity>
+                <a-entity id="theme6" position="-85.475 2.158 9.023" rotation="0 290 0" stand-display="billboardtext: Organizational \n Learning \n 6; platetext:Theme 6: 1:30; audiosrc: /audio/ELDLRTheme6.mp3"></a-entity>
+                <a-entity id="fbmap" gltf-model="#fbmodel" position="-72.3 3.5 3.353" scale="0.75 0.75 0.75" rotation="0 90 0"></a-entity>
             </a-entity>
             <!-- Visitor Center -->
-            <a-entity id="visitorcenter">
+            <a-entity id="visitorcenterassets">
             </a-entity>
         </a-scene>
     </body>
