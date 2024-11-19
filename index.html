@@ -47,8 +47,30 @@
             <a-sky color="#2c2c23"></a-sky>
 
             <!-- Lights -->
-            <a-entity light="type: point; intensity: 10.0; distance: 40; color: #d19945" position="-6 -14 -110"></a-entity>
-            <a-entity light="type: point; intensity: 10.0; distance: 40; color: #dfb937" position="12 -3 -190"></a-entity>
+            <a-entity id="lights">
+                <a-entity light="type: point; intensity: 10.0; distance: 40; color: #d98b3e" position="-17.6 -10.4 -127"></a-entity>
+                <a-entity light="type: point; intensity: 10.0; distance: 40; color: #d98b3e" position="-73 1 -100"></a-entity>
+                <a-entity light="type: point; intensity: 10.0; distance: 100; color: #da8b3d" position="-97.5 33.5 -185"></a-entity>
+                <a-entity light="type: point; intensity: 10.0; distance: 100; color: #da8b3d" position="-196.5 54 -55"></a-entity>
+                <a-entity light="type: point; intensity: 10.0; distance: 40; color: #d98b3e" position="12 -3 -190"></a-entity>
+                <a-entity light="type: point; intensity: 10.0; distance: 80; color: #c9ba4e" position="36.5 22.3 -258"></a-entity>
+            </a-entity>
+
+            <!-- Particle Systems -->
+            <a-entity id="particles">
+                <a-entity position="-73 1 -100" particle-system="
+                    type: 1 (box);
+                    maxAge: 10;
+                    accelerationValue: -1 1 -1;
+                    accelerationSpread: 5 3 2;
+                    velocityValue: 2 2 3;
+                    particleCount: 1000;
+                    texture: ./images/smokeparticle.png;
+                    positionSpread: 20 2 -20;
+                    color: #cacf05, #e64326, #211601;
+                    size: 0.1, 0.8, 4;
+                    sizeSpread: 0.3, 0.6, 3"></a-entity>
+            </a-entity>
 
             <!-- Navigation Mesh -->
             <a-entity id="navmodel" class="navmesh" gltf-model="#navmesh" position="0 0 0" visible="false"></a-entity>
