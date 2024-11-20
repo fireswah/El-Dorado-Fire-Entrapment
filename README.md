@@ -1,10 +1,10 @@
 # El-Dorado-Fire-Entrapment Learning Product
 
-##Deployed Website:
+## Deployed Website:
 Current Status: DRAFT (Testing)
 Link: 
 
-##About
+## About
 This is the learning product for the 2020 El Dorado Fire Entrapment Learning Review (https://lessons.fs2c.usda.gov/incident/el-dorado-fire-fatality-2020):
 - Utilizes AFrame to display the concept of a virtual "museum" of the event.
 - Each room of the building is focused on a specific area of the report, along with a to-scale display of the dozer line where the fatality occured.
@@ -13,7 +13,7 @@ This is the learning product for the 2020 El Dorado Fire Entrapment Learning Rev
 - 6 additional "stands" of the narrated Organizational Learning Report are embedded
 - Images, videos linked in the report are built into the scene, along wtih some additional content
 
-##History
+## History
 - The El Dorado Learning Review Team requested an innovative, experiential learning product for release with the report.
 - A small team was organized that developed the concept of a virtual learning product using 3D tools with the capacity for optional consumption in Virtual Reality.
 - The learning product was originally constructed and deployed in Mozilla Hubs, with assets served from government cloud services (AWS).
