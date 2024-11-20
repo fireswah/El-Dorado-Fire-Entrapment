@@ -19,7 +19,7 @@ This is the learning product for the 2020 El Dorado Fire Entrapment Learning Rev
 - A desired design element/goal was that the product could be updated over time.
 - The learning product was originally constructed and deployed in Mozilla Hubs in mid-late 2021, with assets served from government cloud services (AWS).
 - Interagency Hotshot Crews reported spending up to a whole day (8 hours) using the product during Critical Training.
-- Government cloud services became unavailable in 2023.
+- Government cloud services became unavailable in 2023, forcing the product to be unavailable.
 - Mozilla ended support for Hubs in May, 2024. (https://support.mozilla.org/en-US/kb/end-support-mozilla-hubs)
 - In 2024, this repo was initiated to display proof of concept, and honor through learning.
 
