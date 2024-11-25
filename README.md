@@ -2,7 +2,7 @@
 
 ## Deployed Website:
 - Current Status: DRAFT (Testing)
-- Website Link: 
+- Website Link: https://fireswah.github.io/El-Dorado-Fire-Entrapment/
 
 ## About
 This is the learning product for the 2020 El Dorado Fire Entrapment Learning Review (https://lessons.fs2c.usda.gov/incident/el-dorado-fire-fatality-2020):
