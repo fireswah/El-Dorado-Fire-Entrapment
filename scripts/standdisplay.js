@@ -54,6 +54,7 @@ AFRAME.registerComponent('stand-display', {
         plttext.setAttribute( 'text', 'value', data.platetext );
         plttext.setAttribute( 'text', 'align', 'center' );
         plttext.setAttribute( 'text', 'color', 'silver' );
+        plttext.setAttribute( 'text', 'wrapPixels', '400' );//this is the adjustment to text size I used
         
         button.setAttribute( 'id', idName + '_button' );
         button.setAttribute( 'class', 'button' );
@@ -94,24 +95,32 @@ AFRAME.registerComponent('stand-display', {
         //Create billboard and billboard text
         //Note the text on the billboard doesn't autoscale, it should remain the same throughout.
         var billboard = document.createElement( 'a-entity' );
-        var top = document.createElement( 'a-plane' );
         var pointer = document.createElement( 'a-triangle' );
-        var bbtext = document.createElement( 'a-text' );
+        var bbtext = document.createElement( 'a-entity' );
 
-        top.setAttribute( 'width', 0.900 );
-        top.setAttribute( 'height', 2.080 );
-        top.setAttribute( 'rotation', '0 0 0' );
-        top.setAttribute( 'position', '0 2.5 0' );
-        top.setAttribute( 'material', 'side', 'double' );
-        top.setAttribute( 'material', 'emissive', 'yellow' );
-        top.setAttribute( 'material', 'emissiveIntensity', 0.5 );
         pointer.setAttribute( 'rotation', '0 0 180' );
         pointer.setAttribute( 'scale', '0.25 0.25 1.0' );
         pointer.setAttribute( 'position', '0 1.335 0' );
         pointer.setAttribute( 'material', 'side', 'double' );
         pointer.setAttribute( 'material', 'emissive', 'yellow' );
         pointer.setAttribute( 'material', 'emissiveIntensity', 0.5 );
-        
+
+        //using an entity should autoscale the width of text to the primitive: https://aframe.io/docs/1.6.0/components/text.html
+        bbtext.setAttribute( 'geometry', 'primitive', 'plane' );
+        bbtext.setAttribute( 'geometry', 'width', 0.9 );
+        bbtext.setAttribute( 'geometry', 'height', 2.08 );
+        bbtext.setAttribute( 'material', 'side', 'double' );
+        bbtext.setAttribute( 'material', 'emissive', 'yellow' );
+        bbtext.setAttribute( 'material', 'emissiveIntensity', 0.5 );
+        bbtext.setAttribute( 'position', '0 2.5 0' );
+        bbtext.setAttribute( 'text', 'value', data.billboardtext );
+        bbtext.setAttribute( 'text', 'align', 'center' );
+        bbtext.setAttribute( 'text', 'color', 'black' );
+        bbtext.setAttribute( 'text', 'wrapPixels', '300' );//this is the adjustment to text size I used
+
+        billboard.appendChild( pointer );
+        billboard.appendChild( bbtext );
+
         billboard.setAttribute( 'animation', {
             property: 'rotation',
             to: '0 360 0',
@@ -120,14 +129,6 @@ AFRAME.registerComponent('stand-display', {
             easing: 'linear'
         });
 
-        bbtext.setAttribute( 'text', 'value', data.billboardtext );
-        bbtext.setAttribute( 'text', 'align', 'center' );
-        bbtext.setAttribute( 'text', 'color', 'black' );
-        bbtext.setAttribute( 'position', '0 0.3 0.01' );
-        
-        billboard.appendChild( top );
-        billboard.appendChild( pointer );
-        top.appendChild( bbtext );
         el.appendChild( billboard );
 	},
 
