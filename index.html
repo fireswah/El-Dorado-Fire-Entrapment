@@ -10,6 +10,7 @@
         <script src="./scripts/vidloadcontrol.js"></script>
         <script src="./scripts/standdisplay.js"></script>
         <script src="./scripts/add-quote.js"></script>
+        <script src="./scripts/particles.js"></script>
     </head>
     <body>
         <assets>
@@ -17,6 +18,7 @@
             <img id="eldreport" src="./images/frontpage.png">
             <img id="polles" src="./images/PollesLLCReport.jpg">
             <img id="augustcx" src="./images/AugustCxLLCReport.jpg">
+            <img id="smokeparticle" src="./images/smokeparticle.png">
 
             <!-- Models -->
             <a-asset-item id="floor1" src="./models/2_4Entrance.glb"></a-asset-item>
@@ -39,6 +41,12 @@
             <!-- **Camera - note the navmesh component doesn't use a cameraRig here, may need to figure out later. -->
             <!-- **May want screen overlay to show wasd/mouselook controls? -->
             <!-- **Set acceleration for development here.  Probably should be around 30ish in production? -->
+            <!--  Location at entrance to dozerline for dev
+            <a-camera position="35.644 -17.025 -109.62" wasd-controls="acceleration: 150" simple-navmesh-constraint="navmesh: .navmesh; fall: 0.5; height: 1.65" look-controls>
+                <a-entity cursor="rayOrigin: mouse" raycaster="objects: .button"></a-entity>
+            </a-camera>
+        -->
+            <!-- Location at start -->
             <a-camera position="10.8 0.55 19.7" wasd-controls="acceleration: 150" simple-navmesh-constraint="navmesh: .navmesh; fall: 0.5; height: 1.65" look-controls>
                 <a-entity cursor="rayOrigin: mouse" raycaster="objects: .button"></a-entity>
             </a-camera>
@@ -143,6 +151,102 @@
                 <a-entity id="vdrone1" vidloadcontrol="vidid: viddronecolor; vidsrc: ./videos/V7Drone2317.mp4; vwidth: 0.854; vheight: 0.48; vscale: 3" position="-130.4 19.4 -57.4" rotation="0 67 0"></a-entity>
                 <a-entity id="vdrone2" vidloadcontrol="vidid: viddronetherm; vidsrc: ./videos/V8DroneWithThermal2327.mp4; vwidth: 0.854; vheight: 0.48; vscale: 3" position="-132 19.84 -53.89" rotation="0 67 0"></a-entity>
                 <a-entity id="vlongdrive" vidloadcontrol="vidid: vidlongdrive; vidsrc: ./videos/V9LongDrive2007.mp4; vwidth: 0.854; vheight: 0.48; vscale: 3" position="-113.3 16.5 -36.4" rotation="0 -45 0"></a-entity>
+                <a-entity id="firelinesmoke">
+                    <!-- https://fireswah.github.io/El-Dorado-Fire-Entrapment/images/smokeparticle.png -->
+                    <!-- ./images/smokeparticle.png -->
+                    <!-- colorCurve: 0.9, 0.7, 0.0, 0.6 | 0.6, 0.2, 0.2, 0.4 | 0.2, 0.2, 0.2, 0.3 | 0.1, 0.0, 0.0, 0.3; -->
+                    <a-entity id="main1" rotation="10 0 -10" position="-142 0 -193" scale="150 100 100" particle_system="
+                        imagepath: ./images/smokeparticle.png;
+                        colorCurve: 0.5, 0.3, 0.0, 0.6 | 0.4, 0.2, 0.2, 0.4 | 0.2, 0.2, 0.2, 0.3 | 0.1, 0.0, 0.0, 0.3;
+                        particleSize: 100.0;
+                        particleSizeRandomize: true;
+                        particleNumber: 2000;
+                        lifetime: 10;
+                        xdriftCurve: 0.2, 0.2, 0.2, 0;
+                        zdriftCurve: 0, 0, 0, 0;
+                        yCurve: 0.1, 0.5, 2.0;
+                        orbitSpeedCurve: 0, -0.55, -0.55;
+                        blendMode: 1;">
+                    </a-entity>
+                    <a-entity id="main2" rotation="0 0 0" position="-180 15 -20" scale="50 100 80" particle_system="
+                        imagepath: ./images/smokeparticle.png;
+                        colorCurve: 0.5, 0.3, 0.0, 0.6 | 0.4, 0.2, 0.2, 0.4 | 0.2, 0.2, 0.2, 0.3 | 0.1, 0.0, 0.0, 0.3;
+                        particleSize: 100.0;
+                        particleSizeRandomize: true;
+                        particleNumber: 1000;
+                        lifetime: 10;
+                        xdriftCurve: 0.2, 0.2, 0.2, 0;
+                        zdriftCurve: 0, 0, 0, 0;
+                        yCurve: 0.1, 0.5, 2.0;
+                        orbitSpeedCurve: 0, -0.55, -0.55;
+                        blendMode: 1;">
+                    </a-entity>
+                    <a-entity id="main3" rotation="15 0 -20" position="2 8 -226" scale="80 100 50" particle_system="
+                        imagepath: ./images/smokeparticle.png;
+                        colorCurve: 0.5, 0.3, 0.0, 0.6 | 0.4, 0.2, 0.2, 0.4 | 0.2, 0.2, 0.2, 0.3 | 0.1, 0.0, 0.0, 0.3;
+                        particleSize: 100.0;
+                        particleSizeRandomize: true;
+                        particleNumber: 2000;
+                        lifetime: 10;
+                        xdriftCurve: 0.2, 0.2, 0.2, 0;
+                        zdriftCurve: 0, 0, 0, 0;
+                        yCurve: 0.1, 0.5, 2.0;
+                        orbitSpeedCurve: 0, -0.55, -0.55;
+                        blendMode: 1;">
+                    </a-entity>
+                    <a-entity id="groundfire1" rotation="10 0 -10" position="-94 2 -145" scale="100 3 50" particle_system="
+                        imagepath: ./images/smokeparticle.png;
+                        colorCurve: 0.8, 0.3, 0.1, 1.0 | 0.8, 0.3, 0.1, 1.0 | 0.8, 0.3, 0.1, 1.0 | 0.8, 0.3, 0.1, 1.0;
+                        particleSize: 30.0;
+                        particleSizeRandomize: true;
+                        particleNumber: 3000;
+                        lifetime: 3;
+                        xdriftCurve: 0, 0, 0, 0;
+                        zdriftCurve: 0, 0, 0, 0;
+                        yCurve: 1, 2, 3;
+                        orbitSpeedCurve: -0.05, -0.05, 0.05;
+                        blendMode: 2;">
+                    </a-entity>
+                    <a-entity id="groundfire2" rotation="-8 0 0" position="-180 16 -20" scale="50 3 80" particle_system="
+                        imagepath: ./images/smokeparticle.png;
+                        colorCurve: 0.8, 0.3, 0.1, 1.0 | 0.8, 0.3, 0.1, 1.0 | 0.8, 0.3, 0.1, 1.0 | 0.8, 0.3, 0.1, 1.0;
+                        particleSize: 30.0;
+                        particleSizeRandomize: true;
+                        particleNumber: 2000;
+                        lifetime: 3;
+                        xdriftCurve: 0, 0, 0, 0;
+                        zdriftCurve: 0, 0, 0, 0;
+                        yCurve: 1, 2, 3;
+                        orbitSpeedCurve: 0, 0, 0;
+                        blendMode: 2;">
+                    </a-entity>
+                    <a-entity id="groundfire3" rotation="15 0 -20" position="2 8 -226" scale="80 3 50" particle_system="
+                        imagepath: ./images/smokeparticle.png;
+                        colorCurve: 0.8, 0.3, 0.1, 1.0 | 0.8, 0.3, 0.1, 1.0 | 0.8, 0.3, 0.1, 1.0 | 0.8, 0.3, 0.1, 1.0;
+                        particleSize: 30.0;
+                        particleSizeRandomize: true;
+                        particleNumber: 3000;
+                        lifetime: 3;
+                        xdriftCurve: 0, 0, 0, 0;
+                        zdriftCurve: 0, 0, 0, 0;
+                        yCurve: 1, 2, 3;
+                        orbitSpeedCurve: 0, 0, 0;
+                        blendMode: 2;">
+                    </a-entity>
+                    <a-entity id="emberwash" rotation="10 0 0" position="-80 -2 -95" scale="30 20 10" particle_system="
+                        imagepath: ./images/smokeparticle.png;
+                        colorCurve: 0.8, 0.3, 0.1, 1.0 | 0.8, 0.3, 0.1, 1.0 | 0.8, 0.3, 0.1, 1.0 | 0.8, 0.3, 0.1, 1.0;
+                        particleSize: 8.0;
+                        particleSizeRandomize: true;
+                        particleNumber: 100;
+                        lifetime: 6;
+                        xdriftCurve: 0, 0, 0, 0;
+                        zdriftCurve: 0, 0.5, 1.0, 2.0;
+                        yCurve: 0.1, 0.5, 3.0;
+                        orbitSpeedCurve: -3.14, -5, -6.28;
+                        blendMode: 2;">
+                    </a-entity>
+                </a-entity>
             </a-entity>
             <!-- Organizational Learning Room 4.85-->
             <a-entity id="learningroomassets">
@@ -152,7 +256,10 @@
                 <a-entity id="theme4" position="-61.96 7.28 14.87" rotation="0 45 0" stand-display="billboardtext: Organizational \n Learning \n 4; platetext:Theme 4: 0:56; audiosrc: ./audio/ElDLRTheme4.mp3"></a-entity>
                 <a-entity id="theme5" position="-75.28 4.72 18.59" rotation="0 345 0" stand-display="billboardtext: Organizational \n Learning \n 5; platetext:Theme 5: 0:16; audiosrc: ./audio/ElDLRTheme5.mp3"></a-entity>
                 <a-entity id="theme6" position="-85.475 2.158 9.023" rotation="0 290 0" stand-display="billboardtext: Organizational \n Learning \n 6; platetext:Theme 6: 1:30; audiosrc: ./audio/ElDLRTheme6.mp3"></a-entity>
-                <a-entity id="fbmap" gltf-model="#fbmodel" position="-72.3 3.5 3.353" scale="0.75 0.75 0.75" rotation="0 90 0"></a-entity>
+                <a-entity id="fbmap" position="-71.581 3.5 3.485" rotation="0 45 0">
+                    <a-entity id="staticfbmodel" gltf-model="#fbmodel"  scale="0.75 0.75 0.75"></a-entity>
+                </a-entity>
+                
             </a-entity>
             <!-- Visitor Center -->
             <a-entity id="visitorcenterassets">
