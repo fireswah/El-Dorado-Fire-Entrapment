@@ -11,6 +11,7 @@
         <script src="./scripts/standdisplay.js"></script>
         <script src="./scripts/add-quote.js"></script>
         <script src="./scripts/particles.js"></script>
+        <script src="./scripts/aframe-extras.loaders.min.js"></script><!-- plays animated progression model -->
     </head>
     <body>
         <assets>
@@ -123,7 +124,7 @@
                 <a-entity id="stand13" position="39.5 -18.6 -130.6" rotation="0 90 0" stand-display="billboardtext: AUDIO \n 13; platetext: September 17th: 7:30; audiosrc: ./audio/Stand13.mp3"></a-entity>
                 <a-entity id="vforesee" vidloadcontrol="vidid: vidforsee; vidsrc: ./videos/V2ForseeCreekRunBaxter1525.mp4; vwidth: 0.854; vheight: 0.48; vscale: 3" position="38.86 -16.4 -138.03" rotation="0 0 0"></a-entity>
                 <a-entity id="stand14" position="39.5 -18.6 -117.75" rotation="0 90 0" stand-display="billboardtext: AUDIO \n 14; platetext: Burning Div O: 10:19; audiosrc: ./audio/Stand14.mp3"></a-entity>
-                <a-entity id="progressionmap" gltf-model="#progmap" position="52.022 -18 -127.15" scale="6.9 6.9 6.9" rotation="0 0 0"></a-entity>
+                <a-entity id="progressionmap" gltf-model="#progmap" position="52.022 -18 -127.15" scale="6.9 6.9 6.9" rotation="0 0 0" animation-mixer="duration: 30; crossFadeDuration: 2"></a-entity>
             </a-entity>
             <!-- Dozer Line -->
             <a-entity id="dozerlineassets">
