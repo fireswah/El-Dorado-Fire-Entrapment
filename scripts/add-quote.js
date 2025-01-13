@@ -22,7 +22,7 @@ AFRAME.registerComponent('add-quote', {
             height: 0.0//setting 0 autoscales to match the text
          });
         
-        frame.setAttribute( 'material', { color: 'gray' } );
+       	frame.setAttribute( 'material', { color: 'gray', emissive: '#404040', emissiveIntensity: 1.0 } );
 
         frame.setAttribute( 'text', {
             width: 5.0,//the width of the final product in scene, may want to make this a schema setting.
