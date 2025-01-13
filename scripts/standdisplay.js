@@ -8,7 +8,9 @@ AFRAME.registerComponent('stand-display', {
 	schema: {
         platetext: { type: 'string', default: '' },
         billboardtext: { type: 'string', default: '' },
-        audiosrc: { type: 'string', default: '' }
+        audiosrc: { type: 'string', default: '' },
+	rolloff: { type: 'int', default: 1 },
+        maxDistance: { type: 'int', default: 10 }
 	},
 
 	init: function () {
@@ -77,8 +79,8 @@ AFRAME.registerComponent('stand-display', {
                 button.setAttribute( 'sound', {
                     src: data.audiosrc,
                     on: 'click',
-                    rolloffFactor: 1,
-                    maxDistance: 20,
+                    rolloffFactor: data.rolloff,
+                    maxDistance: data.maxDistance,
                     distanceModel: 'linear'
                 });
                 //console.log( 'loading sound' );
