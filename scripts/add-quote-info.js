@@ -64,6 +64,7 @@ AFRAME.registerComponent('add-quote-info', {
             }else if( data.frametype === 'rock' ) {
                 frame.setAttribute( 'gltf-model', '#quoterock' );
                 frame.setAttribute( 'rotation', { x: 0, y: -90, z: 0 } );
+                var rotValue = el.getAttribute( 'rotation' );
 
                 title.setAttribute( 'text', {
                     baseline: 'top',
@@ -94,7 +95,7 @@ AFRAME.registerComponent('add-quote-info', {
                 el.appendChild( settext );
         
                 el.setAttribute( 'scale', { x: data.scale, y: data.scale, z: data.scale } );
-                el.setAttribute( 'rotation', { x: -55, y: 0, z: 0 } );
+                el.setAttribute( 'rotation', { x: -55, y: rotValue.y, z: rotValue.z } );//sets the entity/rock so the display face is at a 35 degree angle, but keeps the original rotation values
                 //may need to eventually correct position with scaling here, but not worrying about it now.
             }
         }else if( data.texttype === 'info' ) {
