@@ -5,7 +5,7 @@
         -Roughly 8-10 lines of text fit this way, much more and it'll get wonky.  Can adjust wrapCount!
     -Adds backing object/model for either wall (indoor) or rock (outdoor) depending on location in scene
 */
-AFRAME.registerComponent('add-quote', {
+AFRAME.registerComponent('add-quote-info', {
 	schema: {
         texttype: { type: 'string', default: 'quote' },//'quote' or 'info' determines how to use the text display
         titletext: { type: 'string', default: '' },//title at top
