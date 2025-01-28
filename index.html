@@ -97,6 +97,7 @@
             <!-- Introduction Hall -->
              <!-- Need the report link image for stand 2 -->
             <a-entity id="introductionhallassets">
+                <a-entity id="infocharliepic" position="47.761 2 -7" rotation="0 270 0" add-quote-info="texttype: info; scale: 0.5; titletext: Charlie; maintext: Last known photo of Charlie (facing camera)."></a-entity>
                 <a-entity id="kiosk1" gltf-model="#vidkiosk" position="19 3 -13.2" scale="6 6 6">
                     <a-text value="VIDEO 1" color="yellow" position="0 0.26 0.05" align="center" wrap-count="120"></a-text>
                     <a-entity id="vbearpeak" vidloadcontrol="vidid: vidbearpeak; vidsrc: ./videos/V1BearPeakSouth1400-2000.mp4; vwidth: 0.854; vheight: 0.48; vscale: 1" position="0 0 0"></a-entity>
@@ -107,6 +108,7 @@
             </a-entity>
             <!-- San Bernadino NF -->
             <a-entity id="sbnfroomassets">
+                <a-entity id="infocstreetview" position="86 2 -26" rotation="0 0 0" add-quote-info="texttype: info; scale: 0.5; titletext: Google Streetview; maintext: Pre-fire imagery from Google Streetview.  Dozerline was constructed from Highway 38 just to the right (West) of the mile marker."></a-entity>
                 <a-entity id="stand4" position="62 0 3" rotation="0 180 0" stand-display="billboardtext: AUDIO \n 4; platetext: SBNF: 1:19; audiosrc: ./audio/Stand4.mp3"></a-entity>
                 <a-entity id="stand5" position="82 0 -29.4" rotation="0 270 0" stand-display="billboardtext: AUDIO \n 5; platetext: Resource Shortages 1: 1:36; audiosrc: ./audio/Stand5.mp3"></a-entity>
                 <!-- <a-entity vidloadcontrol="id: 'finneyvid'; vidid: #bearpeak; width: 0.854; height: 0.48" position="82.5 2.6 0.4" rotation="0 270 0" scale="5 5 1"></a-entity> -->
@@ -139,8 +141,13 @@
                     <a-entity id="vforesee" vidloadcontrol="vidid: vidforsee; vidsrc: ./videos/V2ForseeCreekRunBaxter1525.mp4; vwidth: 0.854; vheight: 0.48; vscale: 1" position="0 0 0" rotation="0 0 0"></a-entity>
                 </a-entity>
                 <a-entity id="stand14" position="39.5 -18.6 -117.75" rotation="0 90 0" stand-display="billboardtext: AUDIO \n 14; platetext: Burning Div O: 10:19; audiosrc: ./audio/Stand14.mp3"></a-entity>
+                <a-entity id="info3dmap" position="62.734 -15.83 -127.43" rotation="0 270 0" add-quote-info="texttype: info; scale: 0.5; titletext: 3D Progression Map; maintext: This map displays the fire's progression from September 9 - 17."></a-entity>
                 <a-entity id="progressionmap" gltf-model="#progmap" position="52.022 -18 -127.15" scale="6.9 6.9 6.9" rotation="0 0 0" animation-mixer="duration: 30; crossFadeDuration: 2">
                     <a-box id="progressioninset" position="0.345 0.012 -0.688" rotation="0 0 0" scale="0.05 0.05 0.05" emissive="blue" opacity="0.3" wireframe="true"></a-box>
+                    <a-entity id="poi1" position="-0.176 0.15 -0.617" rotation="0 0 0" add-quote-info="texttype: info; scale: 0.05; maintext: Angelus Oaks; rotate: true"></a-entity>
+                    <a-entity id="poi2" position="-0.23 0.15 0.243" rotation="0 0 0" add-quote-info="texttype: info; scale: 0.05; maintext: Point Of Origin; rotate: true"></a-entity>
+                    <a-entity id="poi3" position="0.285 0.339 -0.373" rotation="0 0 0" add-quote-info="texttype: info; scale: 0.05; maintext: San Bernadino Peak; rotate: true"></a-entity>
+                    <a-entity id="poi4" position="0.345 0.15 -0.707" rotation="0 0 0" add-quote-info="texttype: info; scale: 0.05; maintext: Dozerline Area; rotate: true"></a-entity>
                 </a-entity>
             </a-entity>
             <!-- Dozer Line -->
