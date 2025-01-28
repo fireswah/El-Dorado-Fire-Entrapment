@@ -105,7 +105,7 @@ AFRAME.registerComponent('add-quote-info', {
 
                 line.setAttribute( 'line', 'start', { x: 0, y: -2.4, z: 0 } );//hard code base of height size
                 line.setAttribute( 'line', 'end', { x: 0, y: -8, z: 0 } );
-                line.setAttribute( 'line', 'color', 'blue' );
+                line.setAttribute( 'line', 'color', 'darkgray' );
             }
 
             title.setAttribute( 'text', {
@@ -113,7 +113,7 @@ AFRAME.registerComponent('add-quote-info', {
                 align: 'center',
                 wrapCount: 20,//how many "letters" before dropping to the next line.
                 value: data.titletext,
-                color: 'blue',
+                color: 'darkgray',
                 width: 8.54,//matches the face of the glb model (quoteboard or quoterock) for displaying text, then is scaled down later.
                 zOffset: 0.02,
             });
@@ -125,7 +125,7 @@ AFRAME.registerComponent('add-quote-info', {
                 anchor: 'align',
                 wrapCount: 40,//how many "letters" before dropping to the next line.
                 value: data.maintext,
-                color: 'blue',
+                color: 'darkgray',
                 width: 8.54,//matches the face of the glb model (quoteboard or quoterock) for displaying text, then is scaled down later.
                 zOffset: 0.02,
             });
@@ -145,7 +145,7 @@ AFRAME.registerComponent('add-quote-info', {
                     align: 'center',
                     wrapCount: 20,//how many "letters" before dropping to the next line.
                     value: data.titletext,
-                    color: 'blue',
+                    color: 'darkgray',
                     width: 8.54,//matches the face of the glb model (quoteboard or quoterock) for displaying text, then is scaled down later.
                     zOffset: 0.02,
                 });
@@ -158,7 +158,7 @@ AFRAME.registerComponent('add-quote-info', {
                     anchor: 'align',
                     wrapCount: 40,//how many "letters" before dropping to the next line.
                     value: data.maintext,
-                    color: 'blue',
+                    color: 'darkgray',
                     width: 8.54,//matches the face of the glb model (quoteboard or quoterock) for displaying text, then is scaled down later.
                     zOffset: 0.02,
                 });
