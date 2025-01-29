@@ -41,6 +41,7 @@
             <a-asset-item id="quoteboard" src="./models/quoteboard.glb"></a-asset-item>
             <a-asset-item id="quoterock" src="./models/quoterock.glb"></a-asset-item>
             <a-asset-item id="vidkiosk" src="./models/Kiosk.glb"></a-asset-item>
+            <a-asset-item id="glowstick" src="./models/glowstick.glb"></a-asset-item>
         </assets>
         <a-scene stats light="defaultLightsEnabled: false">
             <!-- **Camera - note the navmesh component doesn't use a cameraRig here, may need to figure out later. -->
@@ -195,6 +196,10 @@
                     <a-text value="VIDEO 9" color="yellow" position="0 0.26 0.05" align="center" wrap-count="120"></a-text>
                     <a-entity id="vlongdrive" vidloadcontrol="vidid: vidlongdrive; vidsrc: ./videos/V9LongDrive2007.mp4; vwidth: 0.854; vheight: 0.48; vscale: 1"></a-entity>
                 </a-entity>
+                <a-entity id="stick1" gltf-model="#glowstick" position="-117.8 20.94 -24.9" scale="0.8 0.8 0.8"></a-entity>
+                <a-entity id="stick2" gltf-model="#glowstick" position="-101.43 16.879 -26.6" scale="0.8 0.8 0.8"></a-entity>
+                <a-entity id="stick3" gltf-model="#glowstick" position="-100.3 18.8 -16.4" scale="0.8 0.8 0.8"></a-entity>
+                <a-entity id="stick4" gltf-model="#glowstick" position="-87.995 16.846 -14.6" scale="0.8 0.8 0.8"></a-entity>
                 <a-entity id="firelinesmoke">
                     <!--
                     Notes for DEV
