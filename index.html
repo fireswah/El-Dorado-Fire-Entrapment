@@ -132,22 +132,22 @@
             </a-entity>
             <!-- El Dorado Fire Room -->
             <a-entity id="eldfireroomassets">
-                <a-entity id="stand8" position="72 -18.6 -110" rotation="0 270 0" stand-display="billboardtext: AUDIO \n 8; platetext: El Dorado Fire: 2:17; audiosrc: ./audio/Stand8.mp3"></a-entity>
-                <a-entity id="stand9" position="52 -18.6 -113" rotation="0 180 0" stand-display="billboardtext: AUDIO \n 9; platetext: Initial Management: 3:34; audiosrc: ./audio/Stand9.mp3"></a-entity>
-                <a-entity id="stand10" position="64 -18.6 -117.75" rotation="0 270 0" stand-display="billboardtext: AUDIO \n 10; platetext: Mill Creek: 3:34; audiosrc: ./audio/Stand10.mp3"></a-entity>
-                <a-entity id="quote4" position="58.48 -16.15 -105.9" rotation="0 180 0" add-quote-info="scale: 0.5; titletext: QUOTE; maintext: 'It felt like every day was initial attack.'\n-CAL FIRE Crew Captain"></a-entity>
-                <a-entity id="quote5" position="59.5 -16 -142.8" add-quote-info="scale: 0.5; titletext: QUOTE; maintext: 'When an individual feels an assignment is unsafe, they also have the obligation to identify, to the degree possible, safe alternatives for completing that assignment.  Turning down an assignment is one possible outcome of managing risk.'\n-IRPG"></a-entity>
-                <a-entity id="stand11" position="64 -18.6 -130.6" rotation="0 270 0" stand-display="billboardtext: AUDIO \n 11; platetext: DIV O & L: 1:10; audiosrc: ./audio/Stand11.mp3"></a-entity>
-                <a-entity id="stand12" position="51.8 -18.6 -145" rotation="0 0 0" stand-display="billboardtext: AUDIO \n 12; platetext: DIV O & IMT: 7:00; audiosrc: ./audio/Stand12.mp3"></a-entity>
-                <a-entity id="stand13" position="39.5 -18.6 -130.6" rotation="0 90 0" stand-display="billboardtext: AUDIO \n 13; platetext: September 17th: 7:30; audiosrc: ./audio/Stand13.mp3"></a-entity>
-                <a-entity id="kiosk2" gltf-model="#vidkiosk" position="44 -15.7 -142.5" scale="6 6 6" rotation="0 0 0">
+                <a-entity id="stand8" position="72 -18.6 -110" rotation="0 270 0" visdistance="visType: range; range: 50" stand-display="billboardtext: AUDIO \n 8; platetext: El Dorado Fire: 2:17; audiosrc: ./audio/Stand8.mp3"></a-entity>
+                <a-entity id="stand9" position="52 -18.6 -113" rotation="0 180 0" visdistance="visType: range; range: 40" stand-display="billboardtext: AUDIO \n 9; platetext: Initial Management: 3:34; audiosrc: ./audio/Stand9.mp3"></a-entity>
+                <a-entity id="stand10" position="64 -18.6 -117.75" rotation="0 270 0" visdistance="visType: range; range: 40" stand-display="billboardtext: AUDIO \n 10; platetext: Mill Creek: 3:34; audiosrc: ./audio/Stand10.mp3"></a-entity>
+                <a-entity id="quote4" position="58.48 -16.15 -105.9" rotation="0 180 0" visdistance="visType: range; range: 40" add-quote-info="scale: 0.5; titletext: QUOTE; maintext: 'It felt like every day was initial attack.'\n-CAL FIRE Crew Captain"></a-entity>
+                <a-entity id="quote5" position="59.5 -16 -142.8" visdistance="visType: range; range: 40" add-quote-info="scale: 0.5; titletext: QUOTE; maintext: 'When an individual feels an assignment is unsafe, they also have the obligation to identify, to the degree possible, safe alternatives for completing that assignment.  Turning down an assignment is one possible outcome of managing risk.'\n-IRPG"></a-entity>
+                <a-entity id="stand11" position="64 -18.6 -130.6" rotation="0 270 0" visdistance="visType: range; range: 40" stand-display="billboardtext: AUDIO \n 11; platetext: DIV O & L: 1:10; audiosrc: ./audio/Stand11.mp3"></a-entity>
+                <a-entity id="stand12" position="51.8 -18.6 -145" rotation="0 0 0" visdistance="visType: range; range: 40" stand-display="billboardtext: AUDIO \n 12; platetext: DIV O & IMT: 7:00; audiosrc: ./audio/Stand12.mp3"></a-entity>
+                <a-entity id="stand13" position="39.5 -18.6 -130.6" rotation="0 90 0" visdistance="visType: range; range: 60" stand-display="billboardtext: AUDIO \n 13; platetext: September 17th: 7:30; audiosrc: ./audio/Stand13.mp3"></a-entity>
+                <a-entity id="kiosk2" gltf-model="#vidkiosk" position="44 -15.7 -142.5" scale="6 6 6" rotation="0 0 0" visdistance="visType: range; range: 60">
                     <a-text value="VIDEO 2" color="yellow" position="0 0.26 0.05" align="center" wrap-count="120"></a-text>
                     <a-entity id="vforesee" vidloadcontrol="vidid: vidforsee; vidsrc: ./videos/V2ForseeCreekRunBaxter1525.mp4; vwidth: 0.854; vheight: 0.48; vscale: 1" position="0 0 0" rotation="0 0 0"></a-entity>
                 </a-entity>
-                <a-entity id="stand14" position="39.5 -18.6 -117.75" rotation="0 90 0" stand-display="billboardtext: AUDIO \n 14; platetext: Burning Div O: 10:19; audiosrc: ./audio/Stand14.mp3"></a-entity>
-                <a-entity id="info3dmap" position="62.734 -15.83 -127.43" rotation="0 270 0" add-quote-info="texttype: info; scale: 0.5; titletext: 3D Progression Map; maintext: This map displays the fire's progression from September 9 - 17."></a-entity>
-                <a-entity id="progressionmap" gltf-model="#progmap" position="52.022 -18 -127.15" scale="6.9 6.9 6.9" rotation="0 0 0" animation-mixer="duration: 30; crossFadeDuration: 2">
-                    <a-box id="progressioninset" position="0.345 0.012 -0.688" rotation="0 0 0" scale="0.05 0.05 0.05" emissive="blue" opacity="0.3" wireframe="true"></a-box>
+                <a-entity id="stand14" position="39.5 -18.6 -117.75" rotation="0 90 0" visdistance="visType: range; range: 40" stand-display="billboardtext: AUDIO \n 14; platetext: Burning Div O: 10:19; audiosrc: ./audio/Stand14.mp3"></a-entity>
+                <a-entity id="info3dmap" position="62.734 -15.83 -127.43" rotation="0 270 0" visdistance="visType: range; range: 40" add-quote-info="texttype: info; scale: 0.5; titletext: 3D Progression Map; maintext: This map displays the fire's progression from September 9 - 17."></a-entity>
+                <a-entity id="progressionmap" gltf-model="#progmap" position="52.022 -18 -127.15" visdistance="visType: range; range: 45" scale="6.9 6.9 6.9" rotation="0 0 0" animation-mixer="duration: 30; crossFadeDuration: 2">
+                    <a-box id="progressioninset" position="0.345 0.012 -0.707" rotation="0 0 0" scale="0.05 0.05 0.05" emissive="blue" opacity="0.2"></a-box>
                     <a-entity id="poi1" position="-0.176 0.15 -0.617" rotation="0 0 0" add-quote-info="texttype: info; scale: 0.05; maintext: Angelus Oaks; rotate: true"></a-entity>
                     <a-entity id="poi2" position="-0.23 0.15 0.243" rotation="0 0 0" add-quote-info="texttype: info; scale: 0.05; maintext: Point Of Origin; rotate: true"></a-entity>
                     <a-entity id="poi3" position="0.285 0.339 -0.373" rotation="0 0 0" add-quote-info="texttype: info; scale: 0.05; maintext: San Bernadino Peak; rotate: true"></a-entity>
