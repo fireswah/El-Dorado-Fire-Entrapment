@@ -101,14 +101,14 @@
             <!-- Introduction Hall -->
              <!-- Need the report link image for stand 2 -->
             <a-entity id="introductionhallassets">
-                <a-entity id="infocharliepic" position="47.761 2 -7" rotation="0 270 0" add-quote-info="texttype: info; scale: 0.5; titletext: Charlie; maintext: Last known photo of Charlie (facing camera)."></a-entity>
-                <a-entity id="kiosk1" gltf-model="#vidkiosk" position="19 3 -13.2" scale="6 6 6">
+                <a-entity id="infocharliepic" position="47.761 2 -7" rotation="0 270 0" visdistance="visType: range; range: 60" add-quote-info="texttype: info; scale: 0.5; titletext: Charlie; maintext: Last known photo of Charlie (facing camera)."></a-entity>
+                <a-entity id="kiosk1" gltf-model="#vidkiosk" position="19 3 -13.2" scale="6 6 6" visdistance="visType: range; range: 60">
                     <a-text value="VIDEO 1" color="yellow" position="0 0.26 0.05" align="center" wrap-count="120"></a-text>
                     <a-entity id="vbearpeak" vidloadcontrol="vidid: vidbearpeak; vidsrc: ./videos/V1BearPeakSouth1400-2000.mp4; vwidth: 0.854; vheight: 0.48; vscale: 1" position="0 0 0"></a-entity>
                 </a-entity>
-                <a-entity id="stand2" position="17 0 -1.5" rotation="0 180 0" stand-display="billboardtext: AUDIO \n 2; platetext: El Dorado Fire: 0:38; audiosrc: ./audio/Stand2.mp3"></a-entity>
-                <a-image class="button" src="#eldreport" position="19 3 -0.65" rotation="0 180 0" height="1.056" width="0.816" scale="4 4 1" href-target="url: https://lessons.fs2c.usda.gov/incident/el-dorado-fire-fatality-2020"></a-image>
-                <a-entity id="stand3" position="39 0 -12.75" rotation="0 0 0" stand-display="billboardtext: AUDIO \n 3; platetext: Overview: 5:39; audiosrc: ./audio/Stand3.mp3"></a-entity>
+                <a-entity id="stand2" position="17 0 -1.5" rotation="0 180 0" visdistance="visType: range; range: 60" stand-display="billboardtext: AUDIO \n 2; platetext: El Dorado Fire: 0:38; audiosrc: ./audio/Stand2.mp3"></a-entity>
+                <a-image class="button" src="#eldreport" position="19 3 -0.65" rotation="0 180 0" visdistance="visType: range; range: 60" height="1.056" width="0.816" scale="4 4 1" href-target="url: https://lessons.fs2c.usda.gov/incident/el-dorado-fire-fatality-2020"></a-image>
+                <a-entity id="stand3" position="39 0 -12.75" rotation="0 0 0" visdistance="visType: range; range: 60" stand-display="billboardtext: AUDIO \n 3; platetext: Overview: 5:39; audiosrc: ./audio/Stand3.mp3"></a-entity>
             </a-entity>
             <!-- San Bernadino NF -->
             <a-entity id="sbnfroomassets">
