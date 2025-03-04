@@ -8,7 +8,7 @@
 This is the learning product for the 2020 El Dorado Fire Entrapment Learning Review (https://lessons.fs2c.usda.gov/incident/el-dorado-fire-fatality-2020):
 - Utilizes [AFrame](https://aframe.io/) to display the concept of a virtual "museum" of the event.
 - Each room of the building is focused on a specific area of the report, along with a to-scale display of the dozer line where the fatality occured.
-- The terrain and fuel models used for the dozer line are generated with FastFuels [https://github.com/silvxlabs/fastfuels-core](https://fastfuels.silvxlabs.com/), manually modified to "fit" the building and remove vegetation near the dozer line.
+- The terrain and fuel models used for the dozer line are generated with FastFuels [https://fastfuels.silvxlabs.com](https://fastfuels.silvxlabs.com/), manually modified to "fit" the building and remove vegetation near the dozer line.
 - The report is embedded throughout the scene in 19 narrated "stands".
 - 6 additional "stands" of the narrated Organizational Learning Report are embedded
 - Images, videos linked in the report are built into the scene, along with additional content
