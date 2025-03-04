@@ -13,6 +13,7 @@
         <script src="./scripts/particles.js"></script>
         <script src="./scripts/href-target.js"></script>
         <script src="./scripts/visdistance.js"></script>
+        <script src="./scripts/helpdisplay.js"></script>
         <script src="./scripts/aframe-extras.loaders.min.js"></script><!-- plays animated progression model -->
     </head>
     <body>
@@ -24,6 +25,7 @@
             <img id="smokeparticle" src="./images/smokeparticle.png">
             <img id="crvp" src="./images/CRVPImage.png">
             <img id="guest" src="./images/GuestRegistry.png">
+            <img id="help" src="./images/helpinfo.png">
 
             <!-- Models -->
             <a-asset-item id="floor1" src="./models/2_4Entrance.glb"></a-asset-item>
@@ -45,15 +47,16 @@
             <a-asset-item id="quoterock" src="./models/quoterock.glb"></a-asset-item>
             <a-asset-item id="vidkiosk" src="./models/Kiosk.glb"></a-asset-item>
             <a-asset-item id="glowstick" src="./models/glowstick.glb"></a-asset-item>
+            <a-asset-item id="helpicon" src="./models/infoicon.glb"></a-asset-item>
         </assets>
+        
         <a-scene stats light="defaultLightsEnabled: false">
             <!-- **Camera - note the navmesh component doesn't use a cameraRig here, may need to figure out later. -->
             <!-- **May want screen overlay to show wasd/mouselook controls? -->
             <!-- **Set acceleration for development here.  Probably should be around 30ish in production? -->
             <!-- Location at start -->
-            <a-camera id="camrig" position="10.8 0.55 19.7" wasd-controls="acceleration: 150" simple-navmesh-constraint="navmesh: .navmesh; fall: 0.5; height: 1.65" look-controls>
+            <a-camera id="camrig" position="10.8 0.55 19.7" wasd-controls="acceleration: 150" simple-navmesh-constraint="navmesh: .navmesh; fall: 0.5; height: 1.65" look-controls help-display>
                 <a-entity cursor="rayOrigin: mouse" raycaster="objects: .button"></a-entity>
-                <a-entity geometry="primitive: plane; width: 0; height: 0;" material="color: black" text="value: WASD = Move\nLMB = Look/Click; color: white; align: center;" position="0 -0.75 -1" rotation="0 0 0"></a-entity>
             </a-camera>
 
             <!-- Skybox-->
