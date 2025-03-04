@@ -52,8 +52,7 @@
         
         <a-scene stats light="defaultLightsEnabled: false">
             <!-- **Camera - note the navmesh component doesn't use a cameraRig here, may need to figure out later. -->
-            <!-- **May want screen overlay to show wasd/mouselook controls? -->
-            <!-- **Set acceleration for development here.  Probably should be around 30ish in production? -->
+            <!-- **Set acceleration for development here. Test at 30 for production -->
             <!-- Location at start -->
             <a-camera id="camrig" position="10.8 0.55 19.7" wasd-controls="acceleration: 150" simple-navmesh-constraint="navmesh: .navmesh; fall: 0.5; height: 1.65" look-controls help-display>
                 <a-entity cursor="rayOrigin: mouse" raycaster="objects: .button"></a-entity>
@@ -64,12 +63,24 @@
 
             <!-- Lights -->
             <a-entity id="lights">
-                <a-entity light="type: point; intensity: 10.0; distance: 40; color: #d98b3e" position="-17.6 -10.4 -127"></a-entity>
-                <a-entity light="type: point; intensity: 10.0; distance: 40; color: #d98b3e" position="-73 1 -100"></a-entity>
-                <a-entity light="type: point; intensity: 10.0; distance: 100; color: #da8b3d" position="-97.5 33.5 -185"></a-entity>
-                <a-entity light="type: point; intensity: 10.0; distance: 100; color: #da8b3d" position="-196.5 54 -55"></a-entity>
-                <a-entity light="type: point; intensity: 10.0; distance: 40; color: #d98b3e" position="12 -3 -190"></a-entity>
-                <a-entity light="type: point; intensity: 10.0; distance: 80; color: #c9ba4e" position="36.5 22.3 -258"></a-entity>
+                <a-entity id="l1" light="type: point; intensity: 5; distance: 40; color: #d98b3e" position="-6 -14 -127"
+                    animation="property: position; from: -6 -14 -127; to: -15 0 -116; dur: 6000; dir: alternate; easing: easeInOutQuad; loop: true"
+                    animation__intensity="property: light.intensity; to: 10; dur: 1200; dir: alternate; easing: linear; loop: true">
+                </a-entity>
+                <a-entity id="l2" light="type: point; intensity: 10.0; distance: 40; color: #d98b3e" position="-73 1 -100"
+                    animation="property: position; from: -73 1 -100; to: -73 10 -110; dur: 3000; dir: alternate; easing: easeInOutQuad; loop: true"
+                    animation__intensity="property: light.intensity; to: 20; dur: 1200; dir: alternate; easing: linear; loop: true">
+                </a-entity>
+                <a-entity id="l3" light="type: point; intensity: 10.0; distance: 100; color: #da8b3d" position="-97.5 33.5 -185"
+                    animation="property: position; from: -97.5 33.5 -185; to: -97.5 50 -185; dur: 5000; dir: alternate; easing: easeInOutQuad; loop: true"
+                    animation__intensity="property: light.intensity; to: 20; dur: 4000; dir: alternate; easing: linear; loop: true">
+                </a-entity>
+                <a-entity id="l4" light="type: point; intensity: 10.0; distance: 100; color: #da8b3d" position="-196.5 54 -55"
+                    animation="property: position; from: -196.5 54 -55; to: -196.5 70 -55; dur: 2000; dir: alternate; easing: easeInOutQuad; loop: true"
+                    animation__intensity="property: light.intensity; to: 20; dur: 3000; dir: alternate; easing: linear; loop: true">
+                </a-entity>
+                <a-entity id="l5" light="type: point; intensity: 10.0; distance: 40; color: #d98b3e" position="12 -3 -190"></a-entity>
+                <a-entity id="l6" light="type: point; intensity: 10.0; distance: 80; color: #c9ba4e" position="36.5 22.3 -258"></a-entity>
                 <!-- Back To Building Path -->
                 <a-entity id="path1" light="type: point; intensity: 4.0; distance: 4; color: #39FF14" position="-117.8 20.5 -24.9"></a-entity>
                 <a-entity id="path2" light="type: point; intensity: 4.0; distance: 4; color: #39FF14" position="-101.7 17.2 -26.6"></a-entity>
@@ -81,7 +92,6 @@
             <a-entity id="navmodel" class="navmesh" gltf-model="#navmesh" position="0 0 0" visible="false"></a-entity>
 
             <!-- Building -->
-            <!-- Roof goes here -->
             <a-entity id="entrance" gltf-model="#floor1" position="0 0 0"></a-entity>
             <a-entity id="mainhall" gltf-model="#floor2" position="0 0 0"></a-entity>
             <a-entity id="introhall" gltf-model="#floor3" position="0 0 0"></a-entity>
@@ -102,7 +112,6 @@
                 <a-entity id="quote1" position="12.3 3 -13.9" rotation="0 -90 0" visdistance="visType: range; range: 50" add-quote-info="scale: 0.5; titletext: QUOTE; maintext: 'That was Charlie.  He was an OG.  Always a hardline firefighter.  Goin' hard and doin' it right.'\n-Big Bear IHC Crewmember"></a-entity>
             </a-entity>
             <!-- Introduction Hall -->
-             <!-- Need the report link image for stand 2 -->
             <a-entity id="introductionhallassets">
                 <a-entity id="infocharliepic" position="47.761 2 -7" rotation="0 270 0" visdistance="visType: range; range: 60" add-quote-info="texttype: info; scale: 0.5; titletext: Charlie; maintext: Last known photo of Charlie (facing camera)."></a-entity>
                 <a-entity id="kiosk1" gltf-model="#vidkiosk" position="19 3 -13.2" scale="6 6 6" visdistance="visType: range; range: 60">
