@@ -63,21 +63,21 @@
 
             <!-- Lights -->
             <a-entity id="lights">
-                <a-entity id="l1" light="type: point; intensity: 5; distance: 40; color: #d98b3e; castShadow: true" position="-6 -14 -127"
-                    animation="property: position; from: -6 -12 -127; to: -7 -12 -127; dur: 10000; dir: alternate; easing: easeInOutQuad; loop: true"
+                <a-entity id="l1" light="type: point; intensity: 5; distance: 40; color: #d98b3e; castShadow: true; shadowMapHeight: 256; shadowMapWidth: 256" position="-6 -14 -127"
+                    animation="property: position; from: -6 -12 -127; to: -6.5 -12.5 -127; dur: 10000; dir: alternate; easing: easeInOutQuad; loop: true"
                     animation__intensity="property: light.intensity; to: 10; dur: 1200; dir: alternate; easing: linear; loop: true">
                 </a-entity>
                 <!--  -->
-                <a-entity id="l2" light="type: point; intensity: 10.0; distance: 40; color: #d98b3e; castShadow: true" position="-73 1 -100"
-                    animation="property: position; from: -73 2 -100; to: -73 3 -100; dur: 6000; dir: alternate; easing: easeInOutQuad; loop: true"
+                <a-entity id="l2" light="type: point; intensity: 10.0; distance: 40; color: #d98b3e; castShadow: true; shadowMapHeight: 256; shadowMapWidth: 256" position="-73 1 -100"
+                    animation="property: position; from: -73 2 -100; to: -73 2.5 -100; dur: 6000; dir: alternate; easing: easeInOutQuad; loop: true"
                     animation__intensity="property: light.intensity; to: 20; dur: 1200; dir: alternate; easing: easeInOutQuad; loop: true">
                 </a-entity>
                 <a-entity id="l3" light="type: point; intensity: 10.0; distance: 100; color: #da8b3d;" position="-97.5 33.5 -185"
                     animation="property: position; from: -97.5 33.5 -185; to: -97.5 38 -185; dur: 5000; easing: easeInOutQuad; loop: true"
                     animation__intensity="property: light.intensity; to: 20; dur: 4000; dir: alternate; easing: linear; loop: true">
                 </a-entity>
-                <a-entity id="l4" light="type: point; intensity: 5.0; distance: 100; color: #da8b3d; castShadow: true" position="-196.5 54 -55"
-                    animation="property: position; from: -196.5 65 -55; to: -196.5 67 -55; dur: 5000; dir: alternate; easing: easeInOutQuad; loop: true"
+                <a-entity id="l4" light="type: point; intensity: 5.0; distance: 100; color: #da8b3d; castShadow: true; shadowMapHeight: 256; shadowMapWidth: 256" position="-196.5 54 -55"
+                    animation="property: position; from: -196.5 65 -55; to: -196.5 66 -55; dur: 5000; dir: alternate; easing: easeInOutQuad; loop: true"
                     animation__intensity="property: light.intensity; to: 20; dur: 1000; dir: alternate; easing: easeInOutQuad; loop: true">
                 </a-entity>
                 <a-entity id="l5" light="type: point; intensity: 10.0; distance: 40; color: #d98b3e" position="12 -3 -190"></a-entity>
