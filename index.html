@@ -53,9 +53,8 @@
         
         <a-scene stats light="defaultLightsEnabled: false">
             <!-- **Camera - note the navmesh component doesn't use a cameraRig here, may need to figure out later. -->
-            <!-- **Set acceleration for development here. Test at 30 for production -->
             <!-- Location at start -->
-            <a-camera id="camrig" position="10.8 0.55 19.7" wasd-controls="acceleration: 150" simple-navmesh-constraint="navmesh: .navmesh; fall: 0.5; height: 1.65" look-controls help-display>
+            <a-camera id="camrig" position="10.8 0.55 19.7" wasd-controls="acceleration: 65" simple-navmesh-constraint="navmesh: .navmesh; fall: 0.5; height: 1.65" look-controls help-display>
                 <a-entity cursor="rayOrigin: mouse" raycaster="objects: .button"></a-entity>
             </a-camera>
 
