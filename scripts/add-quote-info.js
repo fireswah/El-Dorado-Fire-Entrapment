@@ -1,9 +1,23 @@
 /*
-	Custom info and quote component:
-	-Creates a text display for the scene in either quote or info text styles
-        -When adding to scene \n works in the text to add a new line
-        -Roughly 8-10 lines of text fit this way, much more and it'll get wonky.  Can adjust wrapCount!
-    -Adds backing object/model for either wall (indoor) or rock (outdoor) depending on location in scene
+	Copyright 2025 Matt Gibson
+        Custom info and quote component:
+		-Creates a text display for the scene in either quote or info text styles
+        	-When adding to scene \n works in the text to add a new line
+        	-Roughly 8-10 lines of text fit this way, much more and it'll get wonky.  Can adjust wrapCount!
+   		-Adds backing object/model for either wall (indoor) or rock (outdoor) depending on location in scene
+
+        This program is free software: you can redistribute it and/or modify
+        it under the terms of the GNU General Public License as published by
+        the Free Software Foundation, either version 3 of the License, or
+        any later version.
+
+        This program is distributed in the hope that it will be useful,
+        but WITHOUT ANY WARRANTY; without even the implied warranty of
+        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+        GNU General Public License for more details.
+
+        You should have received a copy of the GNU General Public License
+        along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 AFRAME.registerComponent('add-quote-info', {
 	schema: {
