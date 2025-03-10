@@ -1,7 +1,7 @@
 # El-Dorado-Fire-Entrapment Learning Product
 
 ## Deployed Website:
-- Current Status: Pre-Release (Testing)
+- Current Status: Version 2 (3/10/25)
 - Website Link: https://fireswah.github.io/El-Dorado-Fire-Entrapment/
 
 ## About
