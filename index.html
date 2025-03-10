@@ -1,9 +1,22 @@
+<!--
+        Copyright 2025 Matt Gibson
+        The El Dorado Fire Fatality Learning Product website
+
+        This program is free software: you can redistribute it and/or modify
+        it under the terms of the GNU General Public License as published by
+        the Free Software Foundation, either version 3 of the License, or
+        any later version.
+
+        This program is distributed in the hope that it will be useful,
+        but WITHOUT ANY WARRANTY; without even the implied warranty of
+        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+        GNU General Public License for more details.
+
+        You should have received a copy of the GNU General Public License
+        along with this program.  If not, see <https://www.gnu.org/licenses/>.
+-->
 <!DOCTYPE html>
 <html>
-    <!--
-        The El Dorado Fire Fatality Learning Product is built with AFrame
-        and THREE.js.
-    -->
     <head>
         <script src="./scripts/aframe-v1.6.0.min.js"></script>
         <script src="./scripts/simple-navmesh-constraint.js"></script>
@@ -52,7 +65,7 @@
         </assets>
         
         <a-scene stats light="defaultLightsEnabled: false">
-            <!-- **Camera - note the navmesh component doesn't use a cameraRig here, may need to figure out later. -->
+            <!-- **Camera - note the navmesh component doesn't use an actual cameraRig here, may need to figure out later. -->
             <!-- Location at start -->
             <a-camera id="camrig" position="10.8 0.55 19.7" wasd-controls="acceleration: 65" simple-navmesh-constraint="navmesh: .navmesh; fall: 0.5; height: 1.65" look-controls help-display>
                 <a-entity cursor="rayOrigin: mouse" raycaster="objects: .button"></a-entity>
@@ -217,12 +230,6 @@
                 <a-entity id="stick4" gltf-model="#glowstick" position="-87.995 16.846 -14.6" scale="0.8 0.8 0.8" visdistance="visType: range; range: 50"></a-entity>
                 <a-entity id="sitemarker" gltf-model="#marker" position="-121.62 17.42 -34.75" rotation="0 270 0" scale="0.3 0.3 0.3"></a-entity>
                 <a-entity id="firelinesmoke">
-                    <!--
-                    Notes for DEV
-                    Having an issue with python served dev versus hosted at Git, so quick copy switch path on smoke image for dev
-                    https://fireswah.github.io/El-Dorado-Fire-Entrapment/images/smokeparticle.png
-                    ./images/smokeparticle.png
-                    -->
                     <a-entity id="main1" rotation="10 0 -10" position="-142 0 -193" scale="150 100 100" particle_system="
                         imagepath: ./images/smokeparticle.png;
                         colorCurve: 0.5, 0.3, 0.0, 0.6 | 0.4, 0.2, 0.2, 0.4 | 0.2, 0.2, 0.2, 0.3 | 0.1, 0.0, 0.0, 0.3;
