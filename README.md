@@ -24,3 +24,6 @@ This is the learning product for the 2020 El Dorado Fire Entrapment Learning Rev
 - In 2024, this repo was initiated to display proof of concept, and honor the fallen through learning.
 
 For Charlie.
+
+## Notes
+- AFrame, the aframe-extras.loaders and the simple-navmesh-constraint components are under MIT licenses, and copyright/license notices are included in the header of their respective js files.
