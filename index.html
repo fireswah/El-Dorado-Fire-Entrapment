@@ -64,7 +64,7 @@
             <a-asset-item id="marker" src="./models/marker.glb"></a-asset-item>
         </assets>
         
-        <a-scene stats light="defaultLightsEnabled: false">
+        <a-scene light="defaultLightsEnabled: false">
             <!-- **Camera - note the navmesh component doesn't use an actual cameraRig here, may need to figure out later. -->
             <!-- Location at start -->
             <a-camera id="camrig" position="10.8 0.55 19.7" wasd-controls="acceleration: 65" simple-navmesh-constraint="navmesh: .navmesh; fall: 0.5; height: 1.65" look-controls help-display>
